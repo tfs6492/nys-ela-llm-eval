@@ -1,0 +1,114 @@
+library(tidyverse)
+library(janitor)
+
+llm_results <- read_csv("data/output/llm_results.csv") |> clean_names()
+
+rf_results <- read_csv("data/output/rf_results_with_ci.csv") |>
+  mutate(passage_id = row_number() - 1) |>
+  select(-true_y) |> 
+  clean_names()
+
+ollama_results <- read_csv("data/output/ollama_results.csv") |> 
+  clean_names()
+
+join_results <- llm_results |>
+  left_join(rf_results, by = "passage_id") |>
+  select(passage_id, true_grade, random_forest_predictions_median_prediction, predicted_grade) |>
+  pivot_longer(
+    cols = c(true_grade, random_forest_predictions_median_prediction, predicted_grade),
+    names_to = "origin",
+    values_to = "grade_level"
+  ) |>
+  mutate(origin = recode(origin,
+                         "true_grade" = "true_grade",
+                         "random_forest_predictions_median_prediction" = "rf",
+                         "predicted_grade"  = "llm"
+  )) |>
+  mutate(grade_level = if_else(origin == "rf", round(grade_level), grade_level))
+
+ollama_wide <- ollama_results |>
+  select(passage_id, model, predicted_grade) |>
+  mutate(model = recode(model,
+                        "llama3.2:1b" = "llama",
+                        "qwen2.5:1.5b" = "qwen")) |>
+  pivot_wider(names_from = model, values_from = predicted_grade)
+
+correlation_results <- llm_results |>
+  select(passage_id, true_grade, claude = predicted_grade) |>
+  left_join(
+    rf_results |>
+      select(passage_id, rf = random_forest_predictions_median_prediction),
+    by = "passage_id"
+  ) |>
+  left_join(ollama_wide, by = "passage_id") |>
+  mutate(across(-passage_id, as.numeric))
+
+correlation_matrix <- correlation_results |>
+  select(-passage_id) |>
+  cor(use = "pairwise.complete.obs", method = "pearson")
+
+correlation_plot_data <- correlation_matrix |>
+  as.data.frame() |>
+  rownames_to_column("method_1") |>
+  pivot_longer(-method_1, names_to = "method_2", values_to = "correlation") |>
+  mutate(
+    method_1 = recode(method_1,
+                      "true_grade" = "True Grade",
+                      "claude" = "Claude Opus 4.5",
+                      "rf" = "Random Forest",
+                      "llama" = "Llama 3.2 1B",
+                      "qwen" = "Qwen 2.5 1.5B"),
+    method_2 = recode(method_2,
+                      "true_grade" = "True Grade",
+                      "claude" = "Claude Opus 4.5",
+                      "rf" = "Random Forest",
+                      "llama" = "Llama 3.2 1B",
+                      "qwen" = "Qwen 2.5 1.5B")
+  )
+
+method_order <- c(
+  "True Grade",
+  "Random Forest",
+  "Claude Opus 4.5",
+  "Llama 3.2 1B",
+  "Qwen 2.5 1.5B"
+)
+
+correlation_heatmap <- correlation_plot_data |>
+  mutate(
+    method_1 = factor(method_1, levels = rev(method_order)),
+    method_2 = factor(method_2, levels = method_order)
+  ) |>
+  ggplot(aes(x = method_2, y = method_1, fill = correlation)) +
+  geom_tile(color = "white", linewidth = 0.8) +
+  geom_text(aes(label = round(correlation, 2)), size = 4) +
+  scale_fill_gradient2(
+    low = "#4DFFF3",
+    mid = "white",
+    high = "#FE6D73",
+    midpoint = 0,
+    limits = c(-1, 1),
+    name = "Pearson r"
+  ) +
+  coord_equal() +
+  labs(
+    title = "Prediction Correlations Across Methods",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid = element_blank(),
+    axis.text.x = element_text(angle = 35, hjust = 1),
+    legend.position = "right"
+  )
+
+correlation_heatmap
+
+ggsave(
+  filename = "figs/correlation_heatmap.png",
+  plot = correlation_heatmap,
+  width = 8,
+  height = 6,
+  dpi = 300
+)
