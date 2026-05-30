@@ -1,0 +1,11 @@
+# macOS system files
+.DS_Store
+
+# R history files
+.Rhistory
+
+# Common R and Python workspace junk
+.RData
+.Ruserdata
+__pycache__/
+.env

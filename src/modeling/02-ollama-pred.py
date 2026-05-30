@@ -11,14 +11,17 @@ Usage
     ollama serve
 
     # Run for a single model:
-    python src/ollama_grading.py --model llama3.2:1b
+    python src/ollama_grading.py --model deepseek-r1:8b
 
-    # Run for multiple models sequentially:
-    python src/ollama_grading.py --model llama3.2:1b qwen2.5:1.5b
+    # Run reasoning models only:
+    python src/ollama_grading.py --model deepseek-r1:8b gpt-oss:20b cogito:14b
+
+    # Run instruction models only:
+    python src/ollama_grading.py --model qwen3:8b mistral-small3.2:latest phi4
 
     # Specify input/output paths explicitly:
     python src/ollama_grading.py \
-        --model llama3.2:1b qwen2.5:1.5b \
+        --model deepseek-r1:8b gpt-oss:20b cogito:14b qwen3:8b mistral-small3.2:latest phi4 \
         --input  data/input/GASS_Final_DS.csv \
         --prompt prompt.md \
         --output data/output/ollama_results.csv
@@ -61,12 +64,14 @@ import requests
 # Configuration defaults
 # ---------------------------------------------------------------------------
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-DEFAULT_INPUT = str(PROJECT_ROOT / "data/input/GASS_Final_DS.csv")
+DEFAULT_INPUT = str(PROJECT_ROOT / "data/input/2024_passages.csv")
 DEFAULT_PROMPT = str(PROJECT_ROOT / "prompts/prompt.md")
 DEFAULT_OUTPUT = str(PROJECT_ROOT / "data/output/ollama_results.csv")
-DEFAULT_MODELS = ["llama3.2:1b", "qwen2.5:1.5b"]
+REASONING_MODELS = ["deepseek-r1:8b", "gpt-oss:20b", "cogito:14b"]
+INSTRUCTION_MODELS = ["qwen3:8b", "mistral-small3.2:latest", "phi4"]
+DEFAULT_MODELS = REASONING_MODELS + INSTRUCTION_MODELS
 
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -162,7 +167,7 @@ def call_ollama(
         "stream": False,
         "options": {
             "temperature": 0.0,  # deterministic
-            "num_predict": 100,  # max tokens in response
+            "num_predict": 8000,  # reasoning models need space for <think> blocks
         },
     }
 
