@@ -3,7 +3,7 @@ library(quanteda.textstats)
 library(randomForest)
 
 train_ds <- read.csv("data/input/GASS_2024_Passages.csv", stringsAsFactors = FALSE)
-test_ds <- read.csv("data/input/GASS_Final_DS.csv", stringsAsFactors = FALSE)
+test_ds <- read.csv("data/input/2024_passages.csv", stringsAsFactors = FALSE)
 
 y_train <- train_ds$"Reading.Level"
 y_test <- test_ds$"Grade.Level"

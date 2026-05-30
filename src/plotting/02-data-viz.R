@@ -1,7 +1,7 @@
 library(tidyverse)
 library(see)
 
-llm_results     <- read_csv("data/output/llm_results.csv")
+llm_results     <- read_csv("data/output/opus_results.csv")
 rf_results      <- read_csv("data/output/rf_results_with_ci.csv") |>
   mutate(passage_id = row_number() - 1) |>
   select(-true_y)
@@ -77,7 +77,7 @@ opus_vs_rf <- ggplot(wide_results) +
     plot.caption    = element_text(hjust = 0.5)
   )
 opus_vs_rf
-# ggsave(filename = "figs/opus_vs_rf.png", plot = opus_vs_rf)
+ggsave(filename = "figs/opus_vs_rf.png", plot = opus_vs_rf)
 
 # ── Plot 2: Absolute deviation by assigned grade level ────────────────────────
 rmse_bar <- wide_results |>
@@ -117,101 +117,131 @@ rmse_bar <- wide_results |>
     axis.ticks           = element_blank()
   )
 rmse_bar
-# ggsave(filename = "figs/rmse_bar.png", plot = rmse_bar)
+ggsave(filename = "figs/rmse_bar.png", plot = rmse_bar)
 
-# ── Plot 3: Local LLMs (Llama, Qwen) vs. Random Forest ───────────────────────
-join_results2 <- ollama_results |>
+# ── Plot 3: Local LLMs vs. Random Forest (split by model type) ───────────────
+
+model_key_map <- c(
+  "deepseek-r1:8b"          = "deepseek_r1",
+  "gpt-oss:20b"             = "gpt_oss",
+  "cogito:14b"              = "cogito",
+  "qwen3:8b"                = "qwen3",
+  "mistral-small3.2:latest" = "mistral_small",
+  "phi4"                    = "phi4"
+)
+
+local_model_display <- c(
+  "deepseek_r1"   = "DeepSeek R1 8B",
+  "gpt_oss"       = "GPT OSS 20B",
+  "cogito"        = "Cogito 14B",
+  "qwen3"         = "Qwen3 8B",
+  "mistral_small" = "Mistral Small 3.2",
+  "phi4"          = "Phi-4"
+)
+
+local_model_colors <- c(
+  "Random Forest"     = col_rf,
+  "DeepSeek R1 8B"    = "#0072B2",
+  "GPT OSS 20B"       = "#56B4E9",
+  "Cogito 14B"        = "#332288",
+  "Qwen3 8B"          = "#CC79A7",
+  "Mistral Small 3.2" = "#D55E00",
+  "Phi-4"             = "#999933"
+)
+
+wide_local <- ollama_results |>
   select(passage_id, model, predicted_grade) |>
+  mutate(model = recode(model, !!!model_key_map)) |>
   pivot_wider(names_from = model, values_from = predicted_grade) |>
   left_join(rf_results, by = "passage_id") |>
-  rename(
-    llama = `llama3.2:1b`,
-    qwen  = `qwen2.5:1.5b`,
-    rf    = random_forest_predictions.Median_Prediction
-  ) |>
+  rename(rf = random_forest_predictions.Median_Prediction) |>
   mutate(rf = round(rf)) |>
-  left_join(
-    llm_results |> select(passage_id, true_grade),
-    by = "passage_id"
-  ) |>
-  pivot_longer(
-    cols      = c(true_grade, rf, llama, qwen),
-    names_to  = "origin",
-    values_to = "grade_level"
-  )
+  left_join(llm_results |> select(passage_id, true_grade), by = "passage_id")
 
-wide_results2 <- join_results2 |>
-  pivot_wider(names_from = origin, values_from = grade_level)
+make_local_plot <- function(data, model_cols, title, caption_text) {
+  long_data <- data |>
+    select(passage_id, true_grade, rf, all_of(model_cols)) |>
+    pivot_longer(
+      cols      = c(rf, all_of(model_cols)),
+      names_to  = "origin",
+      values_to = "predicted"
+    ) |>
+    mutate(
+      label = if_else(
+        origin == "rf", "Random Forest",
+        recode(origin, !!!local_model_display)
+      )
+    )
 
-ollama_qwen_vs_rf <- ggplot(wide_results2) +
-  geom_abline(slope = 1, intercept = 0,
-              linetype = "dashed", color = col_ref, linewidth = 0.6) +
-  geom_smooth(aes(x = true_grade, y = rf,
-                  color = "Random Forest", fill = "Random Forest"),
-              method = "loess", se = TRUE, span = 0.8, alpha = 0.15) +
-  geom_smooth(aes(x = true_grade, y = llama,
-                  color = "Llama 3.2 1B", fill = "Llama 3.2 1B"),
-              method = "loess", se = TRUE, span = 0.8, alpha = 0.15) +
-  geom_smooth(aes(x = true_grade, y = qwen,
-                  color = "Qwen 2.5 1.5B", fill = "Qwen 2.5 1.5B"),
-              method = "loess", se = TRUE, span = 0.8, alpha = 0.15) +
-  geom_point(aes(x = true_grade, y = rf,    color = "Random Forest"),
-             size = 1.5, alpha = 0.7) +
-  geom_point(aes(x = true_grade, y = llama, color = "Llama 3.2 1B"),
-             size = 1.5, alpha = 0.7) +
-  geom_point(aes(x = true_grade, y = qwen,  color = "Qwen 2.5 1.5B"),
-             size = 1.5, alpha = 0.7) +
-  scale_color_manual(
-    name   = NULL,
-    values = c(
-      "Random Forest" = col_rf,
-      "Llama 3.2 1B"  = col_ollama,
-      "Qwen 2.5 1.5B" = col_qwen
-    ),
-    limits = c("Random Forest", "Llama 3.2 1B", "Qwen 2.5 1.5B")
-  ) +
-  scale_fill_manual(
-    name   = NULL,
-    values = c(
-      "Random Forest" = col_rf,
-      "Llama 3.2 1B"  = col_ollama,
-      "Qwen 2.5 1.5B" = col_qwen
-    ),
-    limits = c("Random Forest", "Llama 3.2 1B", "Qwen 2.5 1.5B")
-  ) +
-  scale_x_continuous(breaks = 3:8) +
-  scale_y_continuous(breaks = 3:8) +
-  labs(
-    title    = "Local LLMs and Random Forest systematically diverge from assigned reading grade level",
-    subtitle = "Predicted vs. assigned grade level - dashed line indicates agreement with assigned grade level",
-    caption = "RF and Qwen transition from overestimation at lower grades to underestimation at higher grades;\nLlama shows higher variance throughout.",
-    x        = "Assigned Grade Level",
-    y        = "Predicted Grade Level"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.ticks      = element_blank(),
-    legend.position = "right",
-    plot.caption = element_text(hjust = 0.5)
-  )
-ollama_qwen_vs_rf
-# ggsave(filename = "figs/ollama_qwen_vs_rf.png", plot = ollama_qwen_vs_rf)
+  used_labels <- c("Random Forest", unname(local_model_display[model_cols]))
+  used_colors <- local_model_colors[used_labels]
+
+  ggplot(long_data, aes(x = true_grade, y = predicted,
+                        color = label, fill = label)) +
+    geom_abline(slope = 1, intercept = 0,
+                linetype = "dashed", color = col_ref, linewidth = 0.6) +
+    geom_smooth(method = "loess", se = TRUE, span = 0.8, alpha = 0.15) +
+    geom_point(size = 1.5, alpha = 0.7) +
+    scale_color_manual(name = NULL, values = used_colors, limits = names(used_colors)) +
+    scale_fill_manual(name  = NULL, values = used_colors, limits = names(used_colors)) +
+    scale_x_continuous(breaks = 3:8) +
+    scale_y_continuous(breaks = 3:8) +
+    labs(
+      title    = title,
+      subtitle = "Predicted vs. assigned grade level — dashed line indicates perfect agreement",
+      caption  = caption_text,
+      x        = "Assigned Grade Level",
+      y        = "Predicted Grade Level"
+    ) +
+    theme_minimal() +
+    theme(
+      axis.ticks      = element_blank(),
+      legend.position = "right",
+      plot.caption    = element_text(hjust = 0.5)
+    )
+}
+
+reasoning_vs_rf <- make_local_plot(
+  wide_local,
+  model_cols   = c("deepseek_r1", "gpt_oss", "cogito"),
+  title        = "RF Tracks Assigned Grades, Reasoning-Based LLMs Compress to Mean",
+  caption_text = "DeepSeek R1, GPT OSS, Cogito compared to RF baseline"
+)
+reasoning_vs_rf
+ggsave(filename = "figs/reasoning_vs_rf.png", plot = reasoning_vs_rf, width = 9, height = 5, dpi = 300)
+
+instruction_vs_rf <- make_local_plot(
+  wide_local,
+  model_cols   = c("qwen3", "mistral_small", "phi4"),
+  title        = "RF Tracks Assigned Grades, Instruct-Based LLMs Compress to Mean",
+  caption_text = "Qwen3, Mistral Small, Phi-4 compared to RF baseline"
+)
+instruction_vs_rf
+ggsave(filename = "figs/instruction_vs_rf.png", plot = instruction_vs_rf, width = 9, height = 5, dpi = 300)
 
 run_palette <- c(
-  "Claude Opus 4.5" = col_llm,
-  "Llama 3.2 1B"    = col_ollama,
-  "Qwen 2.5 1.5B"   = col_qwen
+  "Claude Opus 4.5"   = col_llm,
+  "DeepSeek R1 8B"    = "#0072B2",
+  "GPT OSS 20B"       = "#56B4E9",
+  "Cogito 14B"        = "#332288",
+  "Qwen3 8B"          = "#CC79A7",
+  "Mistral Small 3.2" = "#D55E00",
+  "Phi-4"             = "#999933"
 )
 
 # --- Data Preparation ---
 # Combine Claude and Ollama results for latency analysis
 latency_data <- bind_rows(
-  llm_results |> 
+  llm_results |>
     mutate(model_label = "Claude Opus 4.5"),
-  ollama_results |> 
-    mutate(model_label = recode(model, 
-                                "llama3.2:1b"  = "Llama 3.2 1B", 
-                                "qwen2.5:1.5b" = "Qwen 2.5 1.5B"))
+  ollama_results |>
+    mutate(model_label = recode(model,
+                                "deepseek-r1:8b"          = "DeepSeek R1 8B",
+                                "gpt-oss:20b"             = "GPT OSS 20B",
+                                "cogito:14b"              = "Cogito 14B",
+                                "qwen3:8b"                = "Qwen3 8B",
+                                "mistral-small3.2:latest" = "Mistral Small 3.2",
+                                "phi4"                    = "Phi-4"))
 ) |>
   # Apply the log transformation as requested
   mutate(log_rt = log(duration_seconds))
@@ -238,10 +268,10 @@ rt_on_passage <- ggplot(latency_data, aes(x = passage_id, y = log_rt, color = mo
   # Formatting and Labels
   scale_x_continuous(breaks = seq(0, max(latency_data$passage_id, na.rm = TRUE), by = 5)) +
   labs(
-    title    = "Opus leads in latency; small models nearly converge by passage 30",
+    title    = "Local LLMs Defy Complexity-Driven Latency Spikes Seen in Opus",
     subtitle = "Opus vs. Local LLMs: Inference Latency Trends",
     x        = "Passage ID",
-    y        = "Log-scaled Duration in Seconds",
+    y        = "Log-scaled Duration (Seconds)",
     caption  = "Log-scaled duration across passage IDs\nLines indicate OLS trend. Higher Passage IDs may correlate with longer text length or complexity."
   ) +
   theme_minimal(base_size = 12) +
@@ -253,5 +283,5 @@ rt_on_passage <- ggplot(latency_data, aes(x = passage_id, y = log_rt, color = mo
 
 rt_on_passage
 
-# ggsave(filename = "figs/latency_trend_comparison.png", plot = rt_on_passage, width = 9, height = 5, dpi = 300)
+ggsave(filename = "figs/latency_trend_comparison.png", plot = rt_on_passage, width = 9, height = 5, dpi = 300)
 

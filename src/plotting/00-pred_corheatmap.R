@@ -1,7 +1,7 @@
 library(tidyverse)
 library(janitor)
 
-llm_results <- read_csv("data/output/llm_results.csv") |> clean_names()
+llm_results <- read_csv("data/output/opus_results.csv") |> clean_names()
 
 rf_results <- read_csv("data/output/rf_results_with_ci.csv") |>
   mutate(passage_id = row_number() - 1) |>
@@ -26,11 +26,18 @@ join_results <- llm_results |>
   )) |>
   mutate(grade_level = if_else(origin == "rf", round(grade_level), grade_level))
 
+model_key_map <- c(
+  "deepseek-r1:8b"          = "deepseek_r1",
+  "gpt-oss:20b"             = "gpt_oss",
+  "cogito:14b"              = "cogito",
+  "qwen3:8b"                = "qwen3",
+  "mistral-small3.2:latest" = "mistral_small",
+  "phi4"                    = "phi4"
+)
+
 ollama_wide <- ollama_results |>
   select(passage_id, model, predicted_grade) |>
-  mutate(model = recode(model,
-                        "llama3.2:1b" = "llama",
-                        "qwen2.5:1.5b" = "qwen")) |>
+  mutate(model = recode(model, !!!model_key_map)) |>
   pivot_wider(names_from = model, values_from = predicted_grade)
 
 correlation_results <- llm_results |>
@@ -53,25 +60,37 @@ correlation_plot_data <- correlation_matrix |>
   pivot_longer(-method_1, names_to = "method_2", values_to = "correlation") |>
   mutate(
     method_1 = recode(method_1,
-                      "true_grade" = "True Grade",
-                      "claude" = "Claude Opus 4.5",
-                      "rf" = "Random Forest",
-                      "llama" = "Llama 3.2 1B",
-                      "qwen" = "Qwen 2.5 1.5B"),
+                      "true_grade"    = "True Grade",
+                      "claude"        = "Claude Opus 4.5",
+                      "rf"            = "Random Forest",
+                      "deepseek_r1"   = "DeepSeek R1 8B",
+                      "gpt_oss"       = "GPT OSS 20B",
+                      "cogito"        = "Cogito 14B",
+                      "qwen3"         = "Qwen3 8B",
+                      "mistral_small" = "Mistral Small 3.2",
+                      "phi4"          = "Phi-4"),
     method_2 = recode(method_2,
-                      "true_grade" = "True Grade",
-                      "claude" = "Claude Opus 4.5",
-                      "rf" = "Random Forest",
-                      "llama" = "Llama 3.2 1B",
-                      "qwen" = "Qwen 2.5 1.5B")
+                      "true_grade"    = "True Grade",
+                      "claude"        = "Claude Opus 4.5",
+                      "rf"            = "Random Forest",
+                      "deepseek_r1"   = "DeepSeek R1 8B",
+                      "gpt_oss"       = "GPT OSS 20B",
+                      "cogito"        = "Cogito 14B",
+                      "qwen3"         = "Qwen3 8B",
+                      "mistral_small" = "Mistral Small 3.2",
+                      "phi4"          = "Phi-4")
   )
 
 method_order <- c(
   "True Grade",
   "Random Forest",
   "Claude Opus 4.5",
-  "Llama 3.2 1B",
-  "Qwen 2.5 1.5B"
+  "DeepSeek R1 8B",
+  "GPT OSS 20B",
+  "Cogito 14B",
+  "Qwen3 8B",
+  "Mistral Small 3.2",
+  "Phi-4"
 )
 
 correlation_heatmap <- correlation_plot_data |>
