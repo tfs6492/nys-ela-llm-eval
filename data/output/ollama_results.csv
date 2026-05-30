@@ -1,0 +1,939 @@
+passage_id,true_grade,model,raw_response,predicted_grade,parse_error,error_message,duration_seconds
+0,3,deepseek-r1:8b,Reading Level: Grade 3,3,False,,9.649
+1,3,deepseek-r1:8b,Reading Level: Grade 3,3,False,,30.014
+2,3,deepseek-r1:8b,Reading Level: Grade 4,4,False,,9.091
+3,3,deepseek-r1:8b,Reading Level: Grade 3,3,False,,5.07
+4,4,deepseek-r1:8b,,,True,,66.29
+5,4,deepseek-r1:8b,,,True,,66.115
+6,4,deepseek-r1:8b,,,True,,66.208
+7,4,deepseek-r1:8b,Reading Level: Grade 3,3,False,,16.052
+8,4,deepseek-r1:8b,Reading Level: Grade 3,3,False,,18.078
+9,5,deepseek-r1:8b,Reading Level: Grade 3,3,False,,21.008
+10,5,deepseek-r1:8b,Reading Level: Grade 5,5,False,,53.155
+11,5,deepseek-r1:8b,Reading Level: Grade 5,5,False,,53.434
+12,5,deepseek-r1:8b,Reading Level: Grade 5,5,False,,65.26
+13,5,deepseek-r1:8b,Reading Level: Grade 5,5,False,,48.818
+14,6,deepseek-r1:8b,Reading Level: Grade 5,5,False,,60.886
+15,6,deepseek-r1:8b,Reading Level: Grade 3,3,False,,19.591
+16,6,deepseek-r1:8b,Reading Level: Grade 5,5,False,,13.257
+17,6,deepseek-r1:8b,Reading Level: Grade 5,5,False,,9.233
+18,6,deepseek-r1:8b,Reading Level: Grade 4,4,False,,5.055
+19,7,deepseek-r1:8b,Reading Level: Grade 5,5,False,,56.786
+20,7,deepseek-r1:8b,Reading Level: Grade 5,5,False,,17.533
+21,7,deepseek-r1:8b,Reading Level: Grade 3,3,False,,5.993
+22,7,deepseek-r1:8b,Reading Level: Grade 5,5,False,,65.681
+23,7,deepseek-r1:8b,Reading Level: Grade 5,5,False,,47.704
+24,7,deepseek-r1:8b,Reading Level: Grade 3,3,False,,8.395
+25,8,deepseek-r1:8b,,,True,,66.769
+26,8,deepseek-r1:8b,Reading Level: Grade 5,5,False,,52.223
+27,8,deepseek-r1:8b,,,True,,66.621
+28,8,deepseek-r1:8b,Reading Level: Grade 5,5,False,,46.466
+29,8,deepseek-r1:8b,Reading Level: Grade 5,5,False,,50.199
+30,8,deepseek-r1:8b,Reading Level: Grade 5,5,False,,53.999
+0,3,gpt-oss:20b,,,True,,70.172
+1,3,gpt-oss:20b,Reading Level: Grade 7,7,False,,17.836
+2,3,gpt-oss:20b,Reading Level: Grade 5,5,False,,13.962
+3,3,gpt-oss:20b,Reading Level: Grade 3,3,False,,6.848
+4,4,gpt-oss:20b,Reading Level: Grade 5,5,False,,5.444
+5,4,gpt-oss:20b,Reading Level: Grade 5,5,False,,15.511
+6,4,gpt-oss:20b,Reading Level: Grade 5,5,False,,15.588
+7,4,gpt-oss:20b,Reading Level: Grade 5,5,False,,17.358
+8,4,gpt-oss:20b,Reading Level: Grade 5,5,False,,12.198
+9,5,gpt-oss:20b,Reading Level: Grade 5,5,False,,10.79
+10,5,gpt-oss:20b,Reading Level: Grade 5,5,False,,15.654
+11,5,gpt-oss:20b,Reading Level: Grade 5,5,False,,15.424
+12,5,gpt-oss:20b,Reading Level: Grade 5,5,False,,23.352
+13,5,gpt-oss:20b,Reading Level: Grade 5,5,False,,34.613
+14,6,gpt-oss:20b,Reading Level: Grade 5,5,False,,11.862
+15,6,gpt-oss:20b,,,True,,50.34
+16,6,gpt-oss:20b,Reading Level: Grade 3,3,False,,16.029
+17,6,gpt-oss:20b,Reading Level: Grade 5,5,False,,29.31
+18,6,gpt-oss:20b,Reading Level: Grade 5,5,False,,5.314
+19,7,gpt-oss:20b,Reading Level: Grade 5,5,False,,12.42
+20,7,gpt-oss:20b,Reading Level: Grade 5,5,False,,28.836
+21,7,gpt-oss:20b,Reading Level: Grade 7,7,False,,17.322
+22,7,gpt-oss:20b,Reading Level: Grade 5,5,False,,18.611
+23,7,gpt-oss:20b,Reading Level: Grade 3,3,False,,41.644
+24,7,gpt-oss:20b,Reading Level: Grade 7,7,False,,11.357
+25,8,gpt-oss:20b,Reading Level: Grade 5,5,False,,17.504
+26,8,gpt-oss:20b,Reading Level: Grade 7,7,False,,8.289
+27,8,gpt-oss:20b,Reading Level: Grade 5,5,False,,20.113
+28,8,gpt-oss:20b,Reading Level: Grade 7,7,False,,20.426
+29,8,gpt-oss:20b,Reading Level: Grade 5,5,False,,12.015
+30,8,gpt-oss:20b,Reading Level: Grade 3,3,False,,16.354
+0,3,cogito:14b,Reading Level: Grade 4,4,False,,7.564
+1,3,cogito:14b,Reading Level: Grade 4,4,False,,2.784
+2,3,cogito:14b,Reading Level: Grade 4,4,False,,2.809
+3,3,cogito:14b,Reading Level: Grade 3,3,False,,2.708
+4,4,cogito:14b,Reading Level: Grade 5,5,False,,2.734
+5,4,cogito:14b,Reading Level: Grade 3,3,False,,2.765
+6,4,cogito:14b,Reading Level: Grade 5,5,False,,2.777
+7,4,cogito:14b,Reading Level: Grade 5,5,False,,2.546
+8,4,cogito:14b,Reading Level: Grade 4,4,False,,2.603
+9,5,cogito:14b,Reading Level: Grade 5,5,False,,2.718
+10,5,cogito:14b,Reading Level: Grade 5,5,False,,2.745
+11,5,cogito:14b,Reading Level: Grade 5,5,False,,2.783
+12,5,cogito:14b,Reading Level: Grade 4,4,False,,2.702
+13,5,cogito:14b,Reading Level: Grade 5,5,False,,2.675
+14,6,cogito:14b,Reading Level: Grade 5,5,False,,2.746
+15,6,cogito:14b,Reading Level: Grade 4,4,False,,2.6
+16,6,cogito:14b,Reading Level: Grade 5,5,False,,2.693
+17,6,cogito:14b,Reading Level: Grade 5,5,False,,2.766
+18,6,cogito:14b,Reading Level: Grade 5,5,False,,2.642
+19,7,cogito:14b,Reading Level: Grade 5,5,False,,2.821
+20,7,cogito:14b,Reading Level: Grade 5,5,False,,2.778
+21,7,cogito:14b,Reading Level: Grade 5,5,False,,2.789
+22,7,cogito:14b,Reading Level: Grade 5,5,False,,2.782
+23,7,cogito:14b,Reading Level: Grade 5,5,False,,2.734
+24,7,cogito:14b,Reading Level: Grade 5,5,False,,2.6
+25,8,cogito:14b,Reading Level: Grade 5,5,False,,2.89
+26,8,cogito:14b,Reading Level: Grade 5,5,False,,2.81
+27,8,cogito:14b,Reading Level: Grade 5,5,False,,2.81
+28,8,cogito:14b,Reading Level: Grade 5,5,False,,2.799
+29,8,cogito:14b,Reading Level: Grade 5,5,False,,2.684
+30,8,cogito:14b,Reading Level: Grade 5,5,False,,2.768
+0,3,qwen3:8b,Reading Level: Grade 3,3,False,,30.94
+1,3,qwen3:8b,Reading Level: Grade 5,5,False,,31.43
+2,3,qwen3:8b,**Reading Level: Grade 5**,5,False,,26.271
+3,3,qwen3:8b,**Reading Level: Grade 4**,4,False,,5.623
+4,4,qwen3:8b,**Reading Level: Grade 5**,5,False,,26.418
+5,4,qwen3:8b,,,True,,66.231
+6,4,qwen3:8b,**Reading Level: Grade 5**,5,False,,44.84
+7,4,qwen3:8b,Reading Level: Grade 4,4,False,,36.174
+8,4,qwen3:8b,Reading Level: Grade 5,5,False,,28.848
+9,5,qwen3:8b,,,True,,66.462
+10,5,qwen3:8b,,,True,,66.221
+11,5,qwen3:8b,,,True,,66.488
+12,5,qwen3:8b,**Reading Level: Grade 5**,5,False,,20.566
+13,5,qwen3:8b,**Reading Level: Grade 5**,5,False,,11.388
+14,6,qwen3:8b,**Reading Level: Grade 5**,5,False,,14.71
+15,6,qwen3:8b,**Reading Level: Grade 5**,5,False,,16.963
+16,6,qwen3:8b,**Reading Level: Grade 6**,6,False,,45.159
+17,6,qwen3:8b,Reading Level: Grade 5,5,False,,23.961
+18,6,qwen3:8b,**Reading Level: Grade 4**,4,False,,5.473
+19,7,qwen3:8b,,,True,,66.541
+20,7,qwen3:8b,,,True,,66.536
+21,7,qwen3:8b,,,True,,66.465
+22,7,qwen3:8b,**Reading Level: Grade 7**,7,False,,22.047
+23,7,qwen3:8b,,,True,,65.662
+24,7,qwen3:8b,**Reading Level: Grade 5**,5,False,,20.591
+25,8,qwen3:8b,**Reading Level: Grade 6**,6,False,,11.98
+26,8,qwen3:8b,,,True,,66.585
+27,8,qwen3:8b,,,True,,66.921
+28,8,qwen3:8b,**Reading Level: Grade 5**,5,False,,10.181
+29,8,qwen3:8b,**Reading Level: Grade 7**,7,False,,14.915
+30,8,qwen3:8b,,,True,,65.664
+0,3,mistral-small3.2:latest,Reading Level: Grade 4,4,False,,9.041
+1,3,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.764
+2,3,mistral-small3.2:latest,Reading Level: Grade 4,4,False,,2.82
+3,3,mistral-small3.2:latest,Reading Level: Grade 3,3,False,,2.662
+4,4,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.963
+5,4,mistral-small3.2:latest,Reading Level: Grade 4,4,False,,2.776
+6,4,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.82
+7,4,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.666
+8,4,mistral-small3.2:latest,Reading Level: Grade 4,4,False,,10.729
+9,5,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,3.022
+10,5,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.933
+11,5,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.855
+12,5,mistral-small3.2:latest,Reading Level: Grade 4,4,False,,2.818
+13,5,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.851
+14,6,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.796
+15,6,mistral-small3.2:latest,"[Note: multiple passages detected; analyzed Passage 1 only]
+Reading Level: Grade 5",5,False,,3.002
+16,6,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,2.91
+17,6,mistral-small3.2:latest,"[Note: multiple passages detected; analyzed Passage 1 only]
+Reading Level: Grade 5",5,False,,3.138
+18,6,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.642
+19,7,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,3.108
+20,7,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,2.941
+21,7,mistral-small3.2:latest,Reading Level: Grade 7,7,False,,2.989
+22,7,mistral-small3.2:latest,Reading Level: Grade 6,6,False,,2.958
+23,7,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,2.896
+24,7,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.777
+25,8,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,3.01
+26,8,mistral-small3.2:latest,Reading Level: Grade 6,6,False,,2.958
+27,8,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.976
+28,8,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,2.894
+29,8,mistral-small3.2:latest,Reading Level: Grade 5,5,False,,2.795
+30,8,mistral-small3.2:latest,**Reading Level: Grade 5**,5,False,,2.794
+0,3,phi4,"**Reading Level: Grade 4**
+
+The passage is straightforward prose suitable for middle elementary students. The sentence structures are mostly simple or compound, with clear subject-verb-object patterns (Dimension 1). Language use is literal and direct, with minimal figurative language (Dimension 2). The topic of organizing a community event is familiar to young readers, requiring little prior knowledge (Dimension 3). The narrative follows a linear structure, making it easy to follow (Dimension 4).
+
+The vocabulary includes some Tier 2 words like ""announced"" and ""permission,"" but these are contextually supported. There's no significant use of challenging Tier 3 technical terms.
+
+Quantitatively, the passage would likely yield an Flesch-Kincaid grade level around Grade 4 due to its sentence length and syllable count. Qualitative analysis aligns with this estimate, confirming a reading level appropriate for Grade 4 students.",4,False,,15.275
+1,3,phi4,"**Reading Level: Grade 4**
+
+- **Quantitative Approximation:** The passage is prose with an average sentence length (ASL) and syllables per word (ASW) that suggest it fits within the range of a fourth-grade reading level when applying the Flesch-Kincaid formula.
+
+- **Vocabulary Analysis:** The vocabulary includes some Tier 2 words like ""omnivores"" and ""nocturnal,"" which are high-utility academic terms. These words may challenge younger readers but are generally defined or supported in context, making them accessible with minimal external knowledge required.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1: Syntactic Complexity:** The passage predominantly uses simple and compound sentences with clear subject-verb-object structures (Score: 2).
+  - **Dimension 2: Language Abstractness:** The language is mostly literal and explicit, with minimal figurative language (Score: 2).
+  - **Dimension 3: Knowledge Demands:** The text assumes some familiarity with basic animal behavior but does not require specialized background knowledge (Score: 2-3).
+  - **Dimension 4: Structural Complexity:** The passage has a clear linear narrative and predictable organizational pattern (Score: 1).
+
+- **Grade Band Determination:** All dimensions align closely, suggesting a Grade 3–4 band. The FK estimate supports this conclusion.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade level. The complexity is consistent throughout the passage.
+
+Overall, the passage's structure, vocabulary, and content are appropriate for a fourth-grade reading level.",4,False,,6.387
+2,3,phi4,"**Reading Level: Grade 4**
+
+- The passage features simple sentence structures with a mix of compound sentences.
+- Vocabulary includes some Tier 2 words like ""disaster"" and ""homework,"" but they are generally defined or supported in context.
+- Syntactic complexity is moderate, with occasional subordinate clauses.
+- Language abstractness is low to moderate, using direct statements and mild metaphors.
+- Knowledge demands are minimal; the story is self-contained with familiar themes.
+- Structural complexity is straightforward, following a linear narrative.
+
+Overall, these factors align with a Grade 4 reading level.",4,False,,3.935
+3,3,phi4,"**Reading Level: Grade 3**
+
+- The passage is prose with a simple narrative structure.
+- Average sentence length and syllable count suggest a lower grade level.
+- Vocabulary is straightforward, mostly Tier 1 words, with no challenging terms.
+- Syntactic complexity is low (Score 1–2), using simple sentences.
+- Language abstractness is minimal (Score 1–2), relying on literal language.
+- Knowledge demands are low (Score 1–2), as the story is self-contained and familiar.
+- Structural complexity is straightforward (Score 1–2), with a clear narrative progression.",3,False,,3.945
+4,4,phi4,"**Reading Level: Grade 5**
+
+The passage is prose and suitable for analysis using the Flesch-Kincaid formula. Here's how it breaks down:
+
+### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The passage contains a mix of short and medium-length sentences, averaging around 15 words per sentence.
+- **Average Syllables Per Word (ASW):** Most words are one or two syllables long, with an average of about 1.5 syllables per word.
+
+Applying the Flesch-Kincaid formula:
+
+\[ FK \approx 0.39 \times ASL + 11.8 \times ASW - 15.59 \]
+
+\[ FK \approx 0.39 \times 15 + 11.8 \times 1.5 - 15.59 \]
+
+\[ FK \approx 5.85 + 17.7 - 15.59 = 7.96 \]
+
+This suggests a reading level around Grade 8, but this is just a surface-level signal.
+
+### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** ""puzzled,"" ""zone out,"" ""repair,"" ""memories,"" ""cycle.""
+- **Tier 3 Words:** ""electrical impulses,"" ""short-term memory,"" ""long-term memory.""
+
+Most challenging words are defined or supported in context.
+
+### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3–4
+- The passage uses a mix of simple, compound, and some complex sentences with occasional subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 3–4
+- Some figurative language is present (e.g., ""twilight zone""), but most language is literal.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3–4
+- Assumes some familiarity with basic scientific concepts, but not specialized knowledge.
+
+**Dimension 4: Structural Complexity**
+- Score: 1–2
+- The passage has a clear linear narrative and predictable organizational pattern.
+
+### Step 4 — Grade Band Determination
+
+- **Syntactic Complexity:** Grade 5–6
+- **Language Abstractness:** Grade 5–6
+- **Knowledge Demands:** Grade 5–6
+- **Structural Complexity:** Grade 3–4
+
+Three dimensions suggest a Grade 5–6 band, while one suggests Grade 3–4. The majority indicates Grade 5–6.
+
+### Step 5 — Sensitivity Analysis
+
+- Removing complex sentences or simplifying vocabulary would not significantly lower the grade level.
+- The complexity is consistent throughout the passage.
+
+The FK estimate suggested Grade 8, but qualitative analysis aligns more closely with Grade 5–6. Given the majority of dimensions and context support, the final reading level is determined as:
+
+**Reading Level: Grade 5**",5,False,,9.586
+5,4,phi4,"**Reading Level: Grade 4**
+
+- **Quantitative Approximation:** The passage is prose, so we calculate FK using ASL and ASW from a sample of words. The sentence structure is relatively simple with clear subject-verb-object patterns.
+  
+- **Vocabulary Analysis:** Most vocabulary is Tier 2 or common words (e.g., ""wallet,"" ""credit card""). Some domain-specific terms like ""cochinos"" and ""biscochitos"" are present but explained in context.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1: Syntactic Complexity:** Score of 2. The passage uses simple and compound sentences with minimal embedding.
+  - **Dimension 2: Language Abstractness:** Score of 1–2. The language is literal and explicit, with direct statements.
+  - **Dimension 3: Knowledge Demands:** Score of 1–2. The text is self-contained and does not require specialized background knowledge.
+  - **Dimension 4: Structural Complexity:** Score of 1–2. The narrative follows a linear structure with clear topic sentences.
+
+- **Grade Band Determination:** All dimensions align with Grade 3–4, indicating this reading level.
+
+- **Integrate FK Estimate:** The FK estimate supports the qualitative assessment, confirming the passage is appropriate for Grade 4 readers.",4,False,,5.831
+6,4,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose, so we calculate FK using ASL and ASW from a sample of words. The sentence structure is moderately complex with some compound sentences.
+  
+- **Vocabulary Analysis:** Words like ""fantasize,"" ""casa,"" and ""rickety"" are identified as potentially challenging. These are mostly Tier 2 or contextually supported, not requiring external knowledge.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** Score of 3–4 due to a mix of simple and compound sentences.
+  - **Dimension 2 (Language Abstractness):** Score of 1–2 as the language is mostly literal with minimal figurative elements.
+  - **Dimension 3 (Knowledge Demands):** Score of 1–2 since it requires little prior knowledge, focusing on familiar themes like family and friendship.
+  - **Dimension 4 (Structural Complexity):** Score of 1–2 due to a clear linear narrative.
+
+- **Grade Band Determination:** All dimensions align with Grade 5–6. The FK estimate supports this range.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade band, indicating consistent complexity throughout the passage.",5,False,,5.774
+7,4,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** 
+  - Average Sentence Length (ASL) and Average Syllables per Word (ASW) were estimated from a sample of words.
+  - FK formula applied: `FK ≈ 0.39 × ASL + 11.8 × ASW − 15.59`
+  - Result suggests a reading level around Grade 5.
+
+- **Vocabulary Analysis:** 
+  - Identified challenging words include ""delicatessen,"" ""promised,"" and ""equipment.""
+  - These are mostly Tier 2 or contextually supported, with no significant reliance on external knowledge.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** Score of 3. The passage uses a mix of simple and compound sentences.
+  - **Dimension 2 (Language Abstractness):** Score of 2. Language is literal with minimal figurative language.
+  - **Dimension 3 (Knowledge Demands):** Score of 2. Familiar topics, no specialized background required.
+  - **Dimension 4 (Structural Complexity):** Score of 1-2. Linear narrative with clear topic sentences.
+
+- **Grade Band Determination:**
+  - All dimensions align closely with Grade 5–6 band.
+  - FK estimate and qualitative analysis both suggest a Grade 5 level.
+
+- **Sensitivity Analysis:**
+  - Removing complex sentences or simplifying vocabulary would not significantly alter the grade band.
+  - Complexity is consistent throughout the passage. 
+
+The overall assessment indicates that this passage is most appropriate for students at a Grade 5 reading level.",5,False,,6.32
+8,4,phi4,"**Reading Level: Grade 4**
+
+- **Quantitative Approximation:** The passage is prose with an average sentence length (ASL) and syllables per word (ASW) that suggest a reading level around grade 4 when applying the Flesch-Kincaid formula.
+  
+- **Vocabulary Analysis:** Key words like ""dilemma,"" ""adorned,"" and ""tiers"" are Tier 2 vocabulary, which may challenge younger readers but are manageable with context. No Tier 3 technical terms are present.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** The passage uses simple to compound sentences, scoring a 2.
+  - **Dimension 2 (Language Abstractness):** Language is mostly literal and explicit, scoring a 2.
+  - **Dimension 3 (Knowledge Demands):** The story is self-contained with familiar themes, scoring a 1-2.
+  - **Dimension 4 (Structural Complexity):** The narrative follows a clear linear structure, scoring a 1.
+
+- **Grade Band Determination:** All dimensions align to suggest a Grade 3–4 band. The FK estimate supports this conclusion.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade level determination. The complexity is consistent throughout the passage.",4,False,,5.679
+9,5,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose with an average sentence length and syllable count that suggests a middle-grade reading level.
+  
+- **Vocabulary Analysis:** Words like ""concert,"" ""violinist,"" ""opera,"" and ""Bach"" are present, but most can be inferred from context or are familiar to students in grades 5–6. Some Tier 3 words may require additional explanation.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** The passage uses a mix of simple and compound sentences with some complex structures, scoring around 3–4.
+  - **Dimension 2 (Language Abstractness):** Language is mostly literal with minimal figurative language, scoring around 1–2.
+  - **Dimension 3 (Knowledge Demands):** Some prior knowledge about music may be helpful but not essential, scoring around 3.
+  - **Dimension 4 (Structural Complexity):** The structure is clear and linear, scoring around 1–2.
+
+- **Grade Band Determination:** All dimensions suggest a Grade 5–6 band. The FK estimate aligns with this range.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade level determination. The complexity is consistent throughout the passage.",5,False,,5.787
+10,5,phi4,"**Reading Level: Grade 5**
+
+The passage is a narrative about how the First People received different sources of light from natural elements and beings sent by First Woman. The text uses simple sentence structures with some complex sentences that include subordinate clauses, fitting within a syntactic complexity score of 3-4. Vocabulary includes some Tier 2 words like ""illuminate"" and ""complained,"" but most terms are accessible or contextually defined, making the language abstractness moderate (score 3). The knowledge demands are low as it relies on familiar concepts without requiring specialized background information (score 1-2). Structural complexity is straightforward with a clear narrative progression (score 1-2).
+
+The quantitative FK formula would likely yield an estimate around Grade 4-5, aligning well with the qualitative analysis. Overall, the passage's language and structure are appropriate for a fifth-grade reading level.",5,False,,4.781
+11,5,phi4,"**Reading Level: Grade 5**
+
+The passage provides a clear and engaging explanation about turtles and their shells, suitable for a fifth-grade reading level. The vocabulary includes some Tier 2 words like ""evolved"" and ""predators,"" which are appropriate for this grade band. The sentence structures are varied but not overly complex, with a mix of simple and compound sentences that maintain clarity.
+
+**Dimension Analysis:**
+
+1. **Syntactic Complexity:** Predominantly simple to compound sentences; some complex sentences appear (Score 3).
+2. **Language Abstractness:** Mostly literal language with occasional figurative elements like ""armored suits"" (Score 2-3).
+3. **Knowledge Demands:** Assumes basic understanding of biology but explains concepts well, making it accessible without extensive prior knowledge (Score 2-3).
+4. **Structural Complexity:** The passage is linear and easy to follow, with clear topic sentences and a logical progression (Score 1-2).
+
+The qualitative analysis aligns with the quantitative FK estimate, confirming that the reading level is appropriate for Grade 5 students.",5,False,,5.088
+12,5,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose, so we calculate the Flesch-Kincaid (FK) grade level using average sentence length (ASL) and average syllables per word (ASW). The text has a moderate ASL and ASW, suggesting an FK around Grade 5.
+
+- **Vocabulary Analysis:** 
+  - Tier 2 words: ""amazed,"" ""decided.""
+  - Tier 3 words: ""conga,"" ""bongó,"" ""timbales."" These are defined or supported in context by the narrative.
+  
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1: Syntactic Complexity:** Score of 2. The sentences are mostly simple and compound, with clear subject-verb-object structures.
+  - **Dimension 2: Language Abstractness:** Score of 2. The language is literal and explicit, with minimal figurative language.
+  - **Dimension 3: Knowledge Demands:** Score of 1. The passage is self-contained and does not require specialized background knowledge.
+  - **Dimension 4: Structural Complexity:** Score of 2. The narrative follows a linear structure with clear topic sentences.
+
+- **Grade Band Determination:** All dimensions align with Grade 3–4, but the FK estimate suggests Grade 5. Given the vocabulary and context support, the passage is best suited for Grade 5 readers.
+
+- **Sensitivity Analysis:** Removing complex sentences or neutralizing vocabulary would not significantly alter the grade band. The complexity level is consistent throughout the passage.",5,False,,6.307
+13,5,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose with an average sentence length (ASL) of approximately 15 words and an average syllables per word (ASW) around 1.4, resulting in a Flesch-Kincaid grade level estimate of about 5.
+
+- **Vocabulary Analysis:**
+  - *Oud*: Tier 3, domain-specific term; defined by context.
+  - *Arched doorways*: Tier 2, common but slightly advanced vocabulary.
+  - *Sure-footed*: Tier 2, descriptive adjective that may require some inference.
+  - *Harsh unmusical tuning*: Tier 2, descriptive phrase requiring some understanding of music.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1: Syntactic Complexity:** Score 3. The passage uses a mix of simple and compound sentences with occasional complex structures.
+  - **Dimension 2: Language Abstractness:** Score 2. The language is mostly literal, with some mild figurative elements (e.g., ""oud-shaped clouds"").
+  - **Dimension 3: Knowledge Demands:** Score 2. The passage is self-contained with familiar themes and minimal specialized knowledge required.
+  - **Dimension 4: Structural Complexity:** Score 2. The narrative follows a clear linear structure with predictable organization.
+
+- **Grade Band Determination:** All dimensions align closely, suggesting a Grade 5–6 band. The FK estimate supports this range, confirming the passage is appropriate for Grade 5 students.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade level. The complexity and engagement are consistent throughout the passage.",5,False,,6.533
+14,6,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose with an average sentence length (ASL) and syllables per word (ASW) that suggest a reading level around grade 5 when applying the Flesch-Kincaid formula.
+  
+- **Vocabulary Analysis:** Key terms like ""cryptanalyst,"" ""diplomatic code,"" and ""cipher machine"" are Tier 3 vocabulary, which may challenge some readers but are often defined or supported in context.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** The passage uses a mix of simple and compound sentences with occasional complex structures. Score: 3
+  - **Dimension 2 (Language Abstractness):** Language is mostly literal, with some figurative expressions like ""jumped out at her."" Score: 2
+  - **Dimension 3 (Knowledge Demands):** Some prior knowledge about World War II and code breaking may be helpful but not essential. Score: 3
+  - **Dimension 4 (Structural Complexity):** The narrative is linear with a clear structure, making it easy to follow. Score: 2
+
+- **Grade Band Determination:** All dimensions align closely with Grade 5–6, and the FK estimate supports this range.
+
+- **Sensitivity Analysis:** Removing complex sentences or simplifying vocabulary would not significantly alter the grade band, indicating consistent complexity throughout the passage.",5,False,,5.975
+15,6,phi4,"**Reading Level: Grade 4**
+
+- The passage is prose with a clear narrative structure and straightforward language.
+- Average sentence length (ASL) and average syllables per word (ASW) suggest a reading level around grade 4 when applying the Flesch-Kincaid formula.
+- Vocabulary includes some Tier 3 words like ""tenement"" and ""immigrants,"" but these are generally defined or supported by context.
+- Syntactic complexity is low to moderate, with simple and compound sentences predominating (Dimension 1: Score 2).
+- Language abstractness is minimal, relying on literal descriptions (Dimension 2: Score 1–2).
+- Knowledge demands are low; the passage provides sufficient context for understanding without requiring extensive prior knowledge (Dimension 3: Score 1–2).
+- Structural complexity is straightforward with a clear narrative flow and predictable organization (Dimension 4: Score 1–2).
+
+All dimensions align to suggest a Grade 4 reading level.",4,False,,4.8
+16,6,phi4,"**Reading Level: Grade 5**
+
+The passage is prose with continuous content suitable for analysis. It does not contain poetry or verse, nor does it include glossary entries or section headings that would affect the analysis.
+
+### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The passage contains a mix of simple and complex sentences. A representative sample suggests an ASL around 15 words.
+- **Average Syllables per Word (ASW):** The vocabulary is moderately complex, with an estimated ASW of about 1.5 syllables.
+
+Applying the Flesch-Kincaid formula:
+
+\[ FK \approx 0.39 \times 15 + 11.8 \times 1.5 - 15.59 = 7.35 \]
+
+This suggests a reading level around Grade 7, but this is just a surface-level signal.
+
+### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** partnership, extraordinary, scientific, specimens
+- **Tier 3 Words:** lichens, fungi, spores, alga
+
+Most of these words are either defined or supported in context, reducing the difficulty for readers.
+
+### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3–4
+- The passage includes a mix of simple and complex sentences with some subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 2
+- The language is mostly literal, with direct statements about lichens and fungi.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3–4
+- Some familiarity with biology or natural sciences might be helpful but not essential.
+
+**Dimension 4: Structural Complexity**
+- Score: 1–2
+- The passage follows a clear, linear narrative structure.
+
+### Step 4 — Grade Band Determination
+
+- **Syntactic Complexity:** Grade 5–6
+- **Language Abstractness:** Grade 3–4
+- **Knowledge Demands:** Grade 5–6
+- **Structural Complexity:** Grade 3–4
+
+The majority of dimensions suggest a Grade 5–6 band. The FK estimate is slightly higher, but the qualitative analysis supports a lower grade level.
+
+### Step 5 — Sensitivity Analysis
+
+1. **Sentence removal:** Removing complex sentences might lower the syntactic complexity score but not enough to change the overall grade band.
+2. **Vocabulary neutralization:** Replacing Tier 3 vocabulary with simpler terms would likely make the passage more accessible, confirming a Grade 5–6 level.
+3. **Passage consistency:** The complexity is consistent throughout, supporting the determined grade band.
+
+The final reading level determination is Grade 5, aligning with the majority of qualitative scores and considering the FK estimate.",5,False,,9.386
+17,6,phi4,"**Reading Level: Grade 5**
+
+The passage is a continuous prose description of salt marshes, focusing on their ecological dynamics across seasons. It provides detailed information about various species and plant life within these ecosystems, using some domain-specific vocabulary but generally maintaining clarity.
+
+### Quantitative Approximation:
+- **Average Sentence Length (ASL):** The sentences are moderately complex, with an average length that suggests a middle school reading level.
+- **Average Syllables per Word (ASW):** Words used are mostly simple to moderate in syllable count, contributing to the overall readability for grades 5–6.
+
+### Vocabulary Analysis:
+- **Tier 2 words:** ""brackish,"" ""migrating,"" ""algae"" – These terms are academic but commonly taught by grade 5.
+- **Tier 3 words:** ""Phragmites,"" ""rhizomes"" – These are more specialized and may require some background knowledge or context.
+
+### Qualitative Dimension Scoring:
+1. **Syntactic Complexity (Score: 3):** The passage uses a mix of simple, compound, and complex sentences.
+2. **Language Abstractness (Score: 2):** Language is mostly literal with minimal figurative language.
+3. **Knowledge Demands (Score: 3):** Some familiarity with ecological concepts is assumed but not extensive prior knowledge.
+4. **Structural Complexity (Score: 2):** The structure is linear and clear, following a seasonal narrative.
+
+### Grade Band Determination:
+- All dimensions align closely with the characteristics of grade levels 5–6, with no significant outliers or conflicts in scoring.
+
+The passage's vocabulary and sentence structures are appropriate for students in grades 5–6, making it suitable for this reading level.",5,False,,6.755
+18,6,phi4,"[Note: preamble stripped before analysis]
+
+**Reading Level: Grade 3** 
+
+### Analysis:
+
+#### Step 1 — Quantitative Approximation:
+- The passage is poetry or verse; therefore, the Flesch-Kincaid (FK) formula is not applicable.
+
+#### Step 2 — Vocabulary Analysis:
+- **Tier 2 Words:** None identified as particularly challenging.
+- **Tier 3 Words:**
+  - ""calamus"": A specific plant term that may require external knowledge or context for understanding. It's not defined within the passage, but its sensory description provides some contextual clues.
+
+#### Step 3 — Qualitative Dimension Scoring:
+
+**Dimension 1: Syntactic Complexity**
+- Score: 2
+- Description: The sentences are simple and compound; clear subject-verb-object structure with minimal embedding.
+
+**Dimension 2: Language Abstractness**
+- Score: 2
+- Description: Predominantly literal and explicit language, with direct statements about the scene. Minimal figurative language is used.
+
+**Dimension 3: Knowledge Demands**
+- Score: 1
+- Description: The passage is self-contained and uses familiar everyday topics without requiring specialized background knowledge.
+
+**Dimension 4: Structural Complexity**
+- Score: 2
+- Description: Linear narrative with a clear, predictable organizational pattern describing the scene sequentially.
+
+#### Step 4 — Grade Band Determination:
+- All dimensions score within the Grade 3–4 band.
+- The FK estimate is not applicable due to the poetic nature of the text.
+
+#### Conclusion:
+The passage's simplicity in syntax, literal language use, minimal knowledge demands, and straightforward structure align with a Grade 3 reading level.",3,False,,6.395
+19,7,phi4,"**Reading Level: Grade 5**
+
+The passage is a narrative recounting a family's experiences at the Columbian Exposition, with straightforward sentence structures and vocabulary suitable for middle-grade readers. The text includes some domain-specific terms (e.g., ""Columbian Exposition,"" ""Ferris Wheel"") but provides context to aid understanding. Syntactic complexity is moderate, with a mix of simple and compound sentences. Language abstractness is low, as the narrative is literal and descriptive. Knowledge demands are minimal, focusing on familiar themes like family outings and historical landmarks. Structural complexity is straightforward, following a clear chronological order. The FK formula would likely place this passage around Grade 5-6, aligning with the qualitative analysis.",5,False,,4.392
+20,7,phi4,"**Reading Level: Grade 5**
+
+This passage is analyzed based on its sentence structure, vocabulary complexity, thematic content, and structural organization:
+
+1. **Quantitative Approximation (FK Formula):**
+   - The average sentence length (ASL) and syllables per word (ASW) suggest a reading level around Grades 4-6.
+
+2. **Vocabulary Analysis:**
+   - Words like ""metamorphose,"" ""sericulture,"" and ""spinnerets"" are Tier 3 vocabulary, requiring some domain-specific knowledge.
+   - Most challenging words are defined or explained within the context of the passage.
+
+3. **Qualitative Dimension Scoring:**
+
+   - **Dimension 1: Syntactic Complexity**
+     - Score: 3-4
+     - The text includes a mix of simple and complex sentences, with some subordinate clauses.
+   
+   - **Dimension 2: Language Abstractness**
+     - Score: 2-3
+     - Mostly literal language with occasional figurative expressions (e.g., ""Peter Parker could stop a 747 airplane"").
+   
+   - **Dimension 3: Knowledge Demands**
+     - Score: 3-4
+     - Some prior knowledge about spider silk and sericulture is assumed but not extensive.
+   
+   - **Dimension 4: Structural Complexity**
+     - Score: 2-3
+     - The passage has a clear linear structure with some transitions between topics.
+
+4. **Grade Band Determination:**
+   - All dimensions align closely around Grades 5-6, with no significant outliers or conflicts.
+
+The FK estimate and qualitative analysis both suggest that the reading level is appropriate for Grade 5 students.",5,False,,6.647
+21,7,phi4,"**Reading Level: Grade 7**
+
+This passage is analyzed based on its syntactic complexity, language abstractness, knowledge demands, and structural complexity:
+
+1. **Syntactic Complexity (Score: 4):** The text includes a mix of simple, compound, and complex sentences with occasional subordinate clauses. For example, ""Their vibrancy was shocking against the drab courtyard walls"" is a straightforward sentence, while ""He played this game without announcing it, spontaneously vanishing, sneaking into the back garden, climbing into a tree, forcing their mother, when she called and he did not answer, to stop what she was doing"" demonstrates more complex structure.
+
+2. **Language Abstractness (Score: 3):** The passage uses some figurative language and implied meanings, such as ""sunlight flickering like a restless bird on the wall,"" but remains largely literal and explicit in its descriptions.
+
+3. **Knowledge Demands (Score: 3):** Some familiarity with cultural or historical context might be helpful, particularly regarding references to Satyajit Ray's work and Bengali cinema, but these are not essential for understanding the passage.
+
+4. **Structural Complexity (Score: 2):** The narrative is linear and follows a clear progression of events in Subhash and Udayan’s lives, with predictable organizational patterns.
+
+The Flesch-Kincaid readability formula was not applied due to the prose nature of the text. However, qualitative analysis suggests that the passage aligns well with a Grade 7 reading level based on its syntactic complexity and other dimensions.",7,False,,6.383
+22,7,phi4,"**Reading Level: Grade 6**
+
+The passage provides a historical overview of influential women in dance from the early 20th century onwards. It discusses their contributions to modern dance techniques, cultural integration, and choreography.
+
+### Step-by-Step Analysis:
+
+#### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The passage contains sentences averaging around 15–20 words.
+- **Average Syllables per Word (ASW):** Most words are one or two syllables, with some technical terms having more.
+
+Applying the Flesch-Kincaid formula:
+
+\[ FK \approx 0.39 \times ASL + 11.8 \times ASW - 15.59 \]
+
+This results in an estimated grade level of around 6–7, indicating a middle school reading level.
+
+#### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** ""pioneered,"" ""transforming,"" ""frivolous,"" ""conceptions.""
+- **Tier 3 Words:** ""anthropology,"" ""indigenous,"" ""ritual,"" ""avant-garde.""
+
+Most challenging words are defined or supported by context, reducing the need for external knowledge.
+
+#### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3–4
+- The passage uses a mix of simple and complex sentences with some subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 3
+- Some figurative language is present, but most statements are direct.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3–4
+- Assumes familiarity with dance history and terminology but provides context for key concepts.
+
+**Dimension 4: Structural Complexity**
+- Score: 2–3
+- The passage follows a linear narrative structure with clear topic sentences.
+
+#### Step 4 — Grade Band Determination
+
+- **Dimension Scores:** Mostly align around Grades 5–6.
+- **FK Estimate:** Aligns with the qualitative assessment, suggesting a Grade 6 reading level.
+
+#### Step 5 — Sensitivity Analysis
+
+1. **Sentence Removal:** Removing complex sentences would lower complexity slightly but not change the overall grade band.
+2. **Vocabulary Neutralization:** Replacing Tier 3 vocabulary with simpler terms might make it more accessible to younger readers but wouldn't drastically alter the grade band.
+3. **Passage Consistency:** The passage maintains a consistent level of complexity throughout.
+
+Overall, the analysis suggests that the reading level is appropriate for Grade 6 students, balancing sentence structure, vocabulary, and thematic content.",6,False,,12.737
+23,7,phi4,"**Reading Level: Grade 5**
+
+### Analysis:
+
+#### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The passage contains sentences of moderate length with a mix of simple and compound structures.
+- **Average Syllables per Word (ASW):** Words are generally common, with some longer words like ""coronation"" or ""unusual.""
+- **Flesch-Kincaid Formula:** Applying the formula gives an approximate FK grade level around 5. This aligns well with the qualitative analysis.
+
+#### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** Words such as ""crates,"" ""ornaments,"" and ""coronation"" are high-utility academic words.
+- **Tier 3 Words:** Terms like ""giraffe,"" ""jaguar,"" and ""baboons"" are domain-specific but often defined by context or common knowledge.
+
+#### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3
+- The passage uses a mix of simple, compound, and some complex sentences. There is occasional use of subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 2
+- The language is mostly literal and explicit with minimal figurative language.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3
+- Some familiarity with animals might be assumed, but the context provides enough information for understanding.
+
+**Dimension 4: Structural Complexity**
+- Score: 2
+- The passage follows a linear narrative with clear topic sentences and predictable organization.
+
+#### Step 4 — Grade Band Determination
+
+- **Mapping Scores to Grade Bands:** 
+  - Dimension 1 (3) maps to Grade 5–6.
+  - Dimension 2 (2) maps to Grade 3–4.
+  - Dimension 3 (3) maps to Grade 5–6.
+  - Dimension 4 (2) maps to Grade 3–4.
+
+- **Resolution:** Three of the four dimensions suggest a Grade 5–6 band. The FK estimate supports this range, confirming the qualitative assessment.
+
+#### Step 5 — Sensitivity Analysis
+
+- **Sentence Removal:** Removing complex sentences would not significantly alter dimension scores.
+- **Vocabulary Neutralization:** Replacing Tier 3 vocabulary with synonyms does not change the grade band.
+- **Passage Consistency:** The complexity level is consistent throughout, reinforcing the Grade 5 assessment.
+
+The passage aligns well with a Grade 5 reading level based on both quantitative and qualitative analyses.",5,False,,8.676
+24,7,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose, so we calculate the Flesch-Kincaid (FK) grade level using average sentence length and syllables per word. The sentences are moderately complex, and vocabulary is accessible but includes some Tier 3 words like ""menagerie"" and ""enormous.""
+
+- **Vocabulary Analysis:** 
+  - *Menagerie* (Tier 3): Likely unfamiliar to younger readers without context.
+  - *Enormous*: Common enough for Grade 5 understanding.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1: Syntactic Complexity** – Score: 3. The passage uses a mix of simple and compound sentences with some complex structures, but nothing overly intricate.
+  - **Dimension 2: Language Abstractness** – Score: 2. The language is mostly literal and straightforward.
+  - **Dimension 3: Knowledge Demands** – Score: 3. Some familiarity with art history or Rosa Bonheur might be helpful, but not essential for understanding the passage.
+  - **Dimension 4: Structural Complexity** – Score: 2. The narrative follows a clear linear structure.
+
+- **Grade Band Determination:** 
+  - Dimensions 1 and 4 align with Grade 3–4.
+  - Dimension 3 suggests Grade 5–6 due to some assumed knowledge about art history.
+  - FK estimate likely falls around Grade 5, considering sentence complexity and vocabulary.
+
+The majority of dimensions suggest a reading level appropriate for Grades 5–6. The FK estimate supports this conclusion, leading to the determination that the passage is best suited for **Grade 5** readers.",5,False,,6.611
+25,8,phi4,"**Reading Level: Grade 6**
+
+The passage is prose with an average sentence length (ASL) and syllable count that suggests a middle school reading level. The vocabulary includes some Tier 2 words like ""integrated,"" ""sensors,"" and ""trajectory"" which are high-utility academic terms, but most of the technical jargon can be inferred from context or is defined within the passage itself.
+
+**Dimension Analysis:**
+
+1. **Syntactic Complexity:** The sentences vary in structure with a mix of simple, compound, and complex forms. There's some use of subordinate clauses, which places it around a score of 3-4.
+   
+2. **Language Abstractness:** The language is mostly literal with some figurative elements like ""running on air"" or ""stuck the landing,"" suggesting a score of 3.
+
+3. **Knowledge Demands:** Some familiarity with robotics and sports terminology might be helpful, but the context provides enough information for understanding, placing it around a score of 3-4.
+
+4. **Structural Complexity:** The narrative is linear and follows a clear sequence of events in a basketball game between a boy and a robot, scoring it at 1-2.
+
+The FK formula would likely place this passage within the Grade 6 range due to its sentence structure and vocabulary complexity. All dimensions align with a middle school reading level, confirming the grade band determination without significant conflict among dimensions. The qualitative analysis supports the quantitative estimate, leading to a final assessment of Grade 6.",6,False,,6.208
+26,8,phi4,"**Reading Level: Grade 5**
+
+This passage is prose and suitable for analysis using the Flesch-Kincaid formula as well as qualitative dimensions. Here's a breakdown of the analysis:
+
+### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The sentences are moderately complex, with an average length that suggests a middle school reading level.
+- **Average Syllables per Word (ASW):** The vocabulary is not overly complex in terms of syllable count.
+
+Applying the Flesch-Kincaid formula:
+
+\[ FK \approx 0.39 \times ASL + 11.8 \times ASW - 15.59 \]
+
+The result suggests a reading level around Grade 5-6, indicating that the passage is accessible to students in this range.
+
+### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** ""scavengers,"" ""intelligence,"" ""adaptation.""
+- **Tier 3 Words:** ""convergent evolution,"" ""neurological.""
+
+These words are mostly defined or supported by context, making them manageable for the target grade level.
+
+### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3–4
+- The passage uses a mix of simple and complex sentences with some subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 3–4
+- Some abstract concepts are present, such as ""convergent evolution,"" but they are explained in context.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3–4
+- Assumes some familiarity with basic biological and evolutionary concepts.
+
+**Dimension 4: Structural Complexity**
+- Score: 1–2
+- The passage has a clear, linear structure with predictable organization.
+
+### Step 4 — Grade Band Determination
+
+All dimensions suggest a reading level of Grade 5–6. The FK estimate aligns with this qualitative assessment.
+
+### Conclusion
+
+The passage is best suited for students in Grade 5, as it balances sentence complexity, vocabulary demands, and conceptual understanding within the context provided.",5,False,,7.748
+27,8,phi4,"**Reading Level: Grade 7**
+
+The passage presents a narrative about a Japanese immigrant family arriving in São Paulo, Brazil, in 1925. The text features complex sentence structures and descriptive language that contribute to its reading level.
+
+### Quantitative Approximation:
+- **Average Sentence Length (ASL):** The sentences are generally long with multiple clauses.
+- **Average Syllables per Word (ASW):** Words used have a moderate syllable count, contributing to the complexity.
+
+Applying the Flesch-Kincaid formula would likely place this passage in the upper elementary to middle school range due to its sentence length and vocabulary.
+
+### Vocabulary Analysis:
+- **Tier 2 words:** ""stunned,"" ""altitude,"" ""daring.""
+- **Tier 3 words:** ""peddlers,"" ""squawking,"" ""scurrying.""
+
+These words are mostly defined or supported by context, though some may require external knowledge for full comprehension.
+
+### Qualitative Dimension Scoring:
+
+**Dimension 1: Syntactic Complexity**
+- Score: 5
+- The passage uses complex and compound-complex sentences with multiple layers of embedding.
+
+**Dimension 2: Language Abstractness**
+- Score: 3
+- Some figurative language is present, but the narrative remains largely literal.
+
+**Dimension 3: Knowledge Demands**
+- Score: 4
+- Assumes some familiarity with historical context (Japanese immigration to Brazil) and cultural elements.
+
+**Dimension 4: Structural Complexity**
+- Score: 2
+- The structure follows a linear narrative with clear progression from arrival to exploration of the new environment.
+
+### Grade Band Determination:
+- **Syntactic Complexity:** Grade 7–8
+- **Language Abstractness:** Grade 5–6
+- **Knowledge Demands:** Grade 5–6
+- **Structural Complexity:** Grade 3–4
+
+The majority of dimensions suggest a reading level in the middle school range, with syntactic complexity being the highest. The passage aligns best with a Grade 7 reading level due to its complex sentence structures and moderate vocabulary demands.",7,False,,7.64
+28,8,phi4,"**Reading Level: Grade 6**
+
+(Note: preamble stripped before analysis) 
+
+The passage is prose without poetry or verse, allowing for quantitative approximation using the Flesch-Kincaid (FK) formula. The text includes some embedded glossary entries and section headings, which are excluded from sentence-length calculations.
+
+### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** Calculated from a representative sample of words.
+- **Average Syllables per Word (ASW):** Also calculated from the same sample.
+- **FK Formula:** Applied to estimate grade level based on ASL and ASW.
+
+### Step 2 — Vocabulary Analysis
+
+Identified challenging words:
+- **Puebloans, Ancestral Puebloans**: Tier 3; domain-specific terms related to Native American history.
+- **Masonry**: Tier 3; technical term for building techniques.
+- **Check dams**: Tier 3; specific agricultural technique.
+
+Most of these terms are supported by context or inline glossary entries.
+
+### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3–4
+- Mix of simple, compound, and some complex sentences with occasional subordinate clauses.
+
+**Dimension 2: Language Abstractness**
+- Score: 2
+- Predominantly literal and explicit language; minimal figurative language.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3–4
+- Assumes some familiarity with Native American history and archaeological terms but provides context for most concepts.
+
+**Dimension 4: Structural Complexity**
+- Score: 1–2
+- Linear narrative with clear topic sentences and a predictable organizational pattern.
+
+### Step 4 — Grade Band Determination
+
+- **FK Estimate:** Aligns closely with the qualitative analysis.
+- **Cross-Dimension Agreement:** Dimensions 1, 3, and 4 suggest Grade 5–6; Dimension 2 suggests Grade 3–4. Majority agreement leads to a Grade 5–6 band.
+
+### Step 5 — Sensitivity Analysis
+
+- **Sentence Removal:** Removing complex sentences would not significantly alter dimension scores.
+- **Vocabulary Neutralization:** Replacing Tier 3 vocabulary with synonyms might slightly lower the grade level but does not change the overall band.
+- **Passage Consistency:** Complexity is consistent throughout, supporting the assigned grade band.
+
+The passage's complexity and vocabulary align well with a Grade 6 reading level.",6,False,,8.523
+29,8,phi4,"**Reading Level: Grade 5**
+
+- **Quantitative Approximation:** The passage is prose, so we calculate FK using ASL and ASW from a sample of words. The sentence structure is moderately complex with some compound sentences but not overly intricate.
+  
+- **Vocabulary Analysis:** Words like ""Marine Protected Area,"" ""seahorses,"" and ""camouflaged"" are present. These are mostly Tier 2 or contextually supported, making them accessible to Grade 5 students.
+
+- **Qualitative Dimension Scoring:**
+  - **Dimension 1 (Syntactic Complexity):** Score of 3–4 due to a mix of simple and compound sentences.
+  - **Dimension 2 (Language Abstractness):** Score of 1–2, as the language is mostly literal with minimal figurative elements.
+  - **Dimension 3 (Knowledge Demands):** Score of 3–4, assuming some familiarity with marine life but not requiring extensive prior knowledge.
+  - **Dimension 4 (Structural Complexity):** Score of 1–2, given the linear narrative and clear progression.
+
+- **Grade Band Determination:** The scores align mostly within the Grade 5–6 band. FK estimate supports this range, confirming a reading level appropriate for Grade 5 students.",5,False,,5.652
+30,8,phi4,"**Reading Level: Grade 5**
+
+### Analysis:
+
+#### Step 1 — Quantitative Approximation
+
+- **Average Sentence Length (ASL):** The passage contains a mix of simple and compound sentences, with an average length that suggests moderate complexity.
+- **Average Syllables per Word (ASW):** Words are generally common and not overly complex in syllable count.
+
+Applying the Flesch-Kincaid formula:
+
+\[ FK \approx 0.39 \times ASL + 11.8 \times ASW - 15.59 \]
+
+The result suggests a reading level around Grade 5, but this is only a surface-level signal and does not capture all aspects of difficulty.
+
+#### Step 2 — Vocabulary Analysis
+
+- **Tier 2 Words:** ""vulnerable,"" ""predators,"" ""camouflage,"" ""immune system.""
+- **Tier 3 Words:** ""aquaculture,"" ""captive breeding.""
+
+Most challenging words are defined or supported in context, reducing the need for external knowledge.
+
+#### Step 3 — Qualitative Dimension Scoring
+
+**Dimension 1: Syntactic Complexity**
+- Score: 3
+- The passage uses a mix of simple and compound sentences with some complex structures.
+
+**Dimension 2: Language Abstractness**
+- Score: 2
+- Language is mostly literal, with direct statements about the sea horse's characteristics and threats.
+
+**Dimension 3: Knowledge Demands**
+- Score: 3
+- Some familiarity with basic biological concepts is assumed, but not extensive prior knowledge.
+
+**Dimension 4: Structural Complexity**
+- Score: 2
+- The passage follows a clear linear narrative structure, making it easy to follow.
+
+#### Step 4 — Grade Band Determination
+
+- **Syntactic Complexity:** Grade 5–6
+- **Language Abstractness:** Grade 3–4
+- **Knowledge Demands:** Grade 5–6
+- **Structural Complexity:** Grade 3–4
+
+The majority of dimensions suggest a Grade 5–6 band. The FK estimate aligns with this qualitative assessment.
+
+#### Step 5 — Sensitivity Analysis
+
+1. **Sentence removal:** Removing complex sentences would not significantly alter the grade level.
+2. **Vocabulary neutralization:** Replacing Tier 3 vocabulary with simpler terms might lower the difficulty slightly but not enough to change the overall band.
+3. **Passage consistency:** The complexity is consistent throughout, supporting a stable reading level.
+
+Overall, the passage aligns well with a Grade 5 reading level based on both quantitative and qualitative analyses.",5,False,,8.616
