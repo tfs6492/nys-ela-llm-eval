@@ -1,0 +1,35 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2022_G03_01,2022,3,Getting Even,542,510,3.5,3.1,prose,false
+NYST_2022_G03_02,2022,3,Just Listen,516,550,2.8,4.0,prose,false
+NYST_2022_G03_03,2022,3,The Watermelon Seed,419,620,4.2,5.8,prose,false
+NYST_2022_G03_04,2022,3,Pill Bugs,365,580,3.1,4.5,prose,false
+NYST_2022_G03_05,2022,3,"""Saving the Birds"" from Fifty Famous People",405,510,3.1,4.3,prose,false
+NYST_2022_G04_01,2022,4,Fabulous Fathers,499,670,4.5,5,prose,false
+NYST_2022_G04_02,2022,4,Sharing My Story,591,760,5.2,5.6,prose,false
+NYST_2022_G04_03,2022,4,Human Homes that Master the Weather,562,890,5.1,5.7,prose,false
+NYST_2022_G04_04,2022,4,PAIR - The Fox and the Crow,275,940,4.6,5.8,prose,true
+NYST_2022_G04_05,2022,4,PAIR - The Otters and the Fox,265,600,4.0,5.5,prose,true
+NYST_2022_G05_01,2022,5,Excerpt from A Scrap and a Robe,745,830,4.4,5.6,prose,false
+NYST_2022_G05_02,2022,5,Janet Guthrie: Lady in the Fast Lane from Profiles in Sports Courage,840,830,5.9,5.8,prose,false
+NYST_2022_G05_03,2022,5,What is Lake - Effect Snow?,424,920,7.1,6.6,prose,false
+NYST_2022_G05_04,2022,5,The Raindrops' New Dresses,171,NA,NA,NA,poetry,false
+NYST_2022_G05_05,2022,5,PAIR - Excerpt from Dogs Helping Dogs,299,880,6.5,6.8,prose,true
+NYST_2022_G05_06,2022,5,"PAIR - Excerpt from Woof! Read to Me, Please",309,880,5.4,5.7,prose,true
+NYST_2022_G06_01,2022,6,Excerpt from Insignificant Events in the Life of a Cactus,761,970,6.7,6.3,prose,false
+NYST_2022_G06_02,2022,6,Excerpt from The Bat Scientists,687,980,7.3,6.6,prose,false
+NYST_2022_G06_03,2022,6,Excerpt from Greenglass House,668,970,7.1,7.0,prose,false
+NYST_2022_G06_04,2022,6,Excerpt from A Legend of the Wooden Shoes,778,920,5.2,6.5,prose,false
+NYST_2022_G06_05,2022,6,PAIR - Excerpt from Thomas Jefferson Builds a Library,426,930,7,6.4,prose,true
+NYST_2022_G06_06,2022,6,"PAIR - Excerpt from In Omaha, A Library with No Books Brings Technology to All",428,990,8.1,8.0,prose,true
+NYST_2022_G07_01,2022,7,Excerpt from The Last Wild Place,920,1030,6.4,6.4,prose,false
+NYST_2022_G07_02,2022,7,"""Susan Butcher"" from Ladies First",877,1070,9,7.6,prose,false
+NYST_2022_G07_03,2022,7,Uncommon Instruments,843,1130,9.3,9.3,prose,false
+NYST_2022_G07_04,2022,7,Unearthing the Arabia,902,920,7.5,7.6,prose,false
+NYST_2022_G07_05,2022,7,"""Persistent"" from Words with Wings",209,NA,NA,NA,poetry,false
+NYST_2022_G07_06,2022,7,Excerpt from The Strictest School in the World,540,920,6.1,6.6,prose,false
+NYST_2022_G08_01,2022,8,"Excerpt from ""The Beadwork"" from American Indian Stories",948,1050,7,7.5,prose,false
+NYST_2022_G08_02,2022,8,Excerpt from The Guest Cat,818,1120,8.7,7.3,prose,false
+NYST_2022_G08_03,2022,8,Excerpt from The Call of Coney Island,777,1130,10.2,8.9,prose,false
+NYST_2022_G08_04,2022,8,Excerpt from “What Kids Learn from Hearing Family Stories”,752,1190,10,8.5,prose,false
+NYST_2022_G08_05,2022,8,Excerpt from 100 Days and 99 Nights,746,1170,9,7.4,prose,false
+NYST_2022_G08_06,2022,8,"""Rain Check""",173,NA,NA,NA,poetry,false

@@ -1,0 +1,33 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2019_G03_01,2019,3,Flying on Ice,643,550L,2.0,46,prose,false
+NYST_2019_G03_02,2019,3,Excerpt from Nature's Fireworks: A Book About Lightning,458,590L,4.7,54,prose,false
+NYST_2019_G03_03,2019,3,Meet the Teacher,595,760L,6.5,54,prose,false
+NYST_2019_G03_04,2019,3,Excerpt from Just the Right Gift,596,490L,2.7,45,prose,false
+NYST_2019_G03_05,2019,3,Don't Touch Me!,314,570L,3.4,50,prose,false
+NYST_2019_G04_03,2019,4,The Day I Rescued Einstein's Compass,621,560L,3.6,49,prose,false
+NYST_2019_G04_04,2019,4,Meet Hannah Wynne: Teen Storyteller,365,760L,7.0,56,prose,false
+NYST_2019_G04_05,2019,4,Reaching for the Top,298,790L,6.0,54,prose,false
+NYST_2019_G05_01,2019,5,Excerpt from Snowflake Bentley,736,670L,4.6,53,prose,false
+NYST_2019_G05_02,2019,5,Excerpt from Gregor and the Sheep,816,980L,5.7,55,prose,false
+NYST_2019_G05_03,2019,5,Excerpt from Seeds of Change: Planting a Path to Peace,577,670L,4.9,52,prose,false
+NYST_2019_G05_04,2019,5,Excerpt from Wackiest White House Pets,784,890L,7.7,58,prose,false
+NYST_2019_G05_05,2019,5,Excerpt from Bloomability,806,650L,4.5,49,prose,false
+NYST_2019_G05_06,2019,5,Excerpt from Secrets of the Cicada Summer,800,780L,5.2,52,prose,false
+NYST_2019_G06_01,2019,6,Excerpt from Addison Cooke and the Treasure of the Incas,804,940L,6.8,59,prose,false
+NYST_2019_G06_02,2019,6,Finding Sacagawea,783,920L,7.7,56,prose,false
+NYST_2019_G06_03,2019,6,Excerpt from School Days in Egypt,614,900L,6.1,58,prose,false
+NYST_2019_G06_04,2019,6,Top Spot,687,1000L,7.8,62,prose,false
+NYST_2019_G06_05,2019,6,Excerpt from Under the Persimmon Tree,934,850L,5.2,53,prose,false
+NYST_2019_G06_06,2019,6,Excerpt from Minuk: Ashes in the Pathway,945,1000L,6.3,54,prose,false
+NYST_2019_G07_01,2019,7,Excerpt from Winds of Hope,1002,980L,7.0,57,prose,false
+NYST_2019_G07_02,2019,7,Excerpt from The Wednesday Wars,913,1000L,7.0,58,prose,false
+NYST_2019_G07_03,2019,7,Antarctica's Hidden Wetland: From Ice to ET,955,940L,8.1,62,prose,false
+NYST_2019_G07_04,2019,7,At Dusk,205,NA,NA,NA,poetry,false
+NYST_2019_G07_05,2019,7,PAIR - Excerpt from Marine Mammals in Captivity,472,1100L,9.0,64,prose,true
+NYST_2019_G07_06,2019,7,PAIR - Excerpt from What Zoo Critics Don't Understand,362,1150L,10.0,67,prose,true
+NYST_2019_G08_01,2019,8,Excerpt from River of Dreams,647,1000L,7.4,58,prose,false
+NYST_2019_G08_02,2019,8,Excerpt from A la Carte,826,1160L,8.4,58,prose,false
+NYST_2019_G08_03,2019,8,Excerpt from Wheels of Change: How Women Rode the Bicycle to Freedom,1029,1170L,10.4,65,prose,false
+NYST_2019_G08_04,2019,8,So Much Happiness,214,NA,NA,NA,poetry,false
+NYST_2019_G08_05,2019,8,PAIR - Excerpt from Gadgets: Built To Not Last,327,1200L,9.9,65,prose,true
+NYST_2019_G08_06,2019,8,"PAIR - Don't Fix Your Fridge, Just Buy a New One",394,1110L,9.5,65,prose,true

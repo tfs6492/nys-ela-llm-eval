@@ -1,0 +1,32 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2023_G03_01,2023,3,Excerpt from Brothers on Ice,690,550,2.7,3.2,prose,false
+NYST_2023_G03_02,2023,3,Excerpt from My Dadima Wears a Sari,646,530,3.0,3.4,prose,false
+NYST_2023_G03_03,2023,3,Funderstorm,712,660,3.6,4.0,prose,false
+NYST_2023_G03_04,2023,3,Excerpt from The Sensory System: Why Am I Ticklish?,525,550,2.6,4.5,prose,false
+NYST_2023_G04_01,2023,4,Excerpt from Daisy’s Perfect Word,760,620,4.7,5.1,prose,false
+NYST_2023_G04_02,2023,4,Excerpt from A Welcome Thief,539,1020,7.4,7.1,prose,false
+NYST_2023_G04_03,2023,4,Turkey Tug-of-War,459,790,5.8,6.8,prose,false
+NYST_2023_G04_04,2023,4,PAIR - Excerpt from Walt Disney,358,700,6.4,4.8,prose,true
+NYST_2023_G04_05,2023,4,PAIR - Excerpt from Edwin Binney: The Founder of Crayola Crayons,341,610,6.2,4.9,prose,true
+NYST_2023_G05_01,2023,5,Excerpt from President of the Whole Fifth Grade,789,830,5.1,5.6,prose,false
+NYST_2023_G05_02,2023,5,The History of Money: From Bartering to Bills,709,900,6.0,7.3,prose,false
+NYST_2023_G05_03,2023,5,Excerpt from Benny’s Flag,805,630,5.6,5.8,prose,false
+NYST_2023_G05_04,2023,5,PAIR - Excerpt from Miracles on Maple Hill,360,640,4.9,5.2,prose,true
+NYST_2023_G05_05,2023,5,PAIR - Excerpt from Little House in the Big Woods,394,810,5.9,5.6,prose,true
+NYST_2023_G06_01,2023,6,Excerpt from Carrots for Ranger,792,1050,6.0,6.8,prose,false
+NYST_2023_G06_02,2023,6,Excerpt from Welcome to the World of Hummingbirds,1002,900,6.3,6.4,prose,false
+NYST_2023_G06_03,2023,6,Excerpt from The Rice Room: Growing Up Chinese-American,616,910,5.5,6.5,prose,false
+NYST_2023_G06_04,2023,6,PAIR - Excerpt from Rope Burn,369,780,4.9,5.1,prose,true
+NYST_2023_G06_05,2023,6,PAIR - Excerpt from Speechless,469,840,6.4,6.6,prose,true
+NYST_2023_G07_01,2023,7,Becoming Kareem: Growing Up On and Off the Court,665,970,7.3,7.2,prose,false
+NYST_2023_G07_02,2023,7,Exiled,257,NA,NA,NA,poetry,false
+NYST_2023_G07_03,2023,7,Excerpt from Inevitable and Only,767,1210,8.7,7.8,prose,false
+NYST_2023_G07_04,2023,7,The Advice of a Little Girl: Lincoln Exhibition Confirms a Family Myth,711,1080,8.2,7.3,prose,false
+NYST_2023_G07_05,2023,7,PAIR - Excerpt from Art for the Sea,355,970,7.8,7.7,prose,true
+NYST_2023_G07_06,2023,7,PAIR - Excerpt from The Best Way To Deal with Ocean Trash,492,1120,9.1,8.7,prose,true
+NYST_2023_G08_01,2023,8,"Excerpt from Girl with a Camera: Margaret Bourke-White, Photographer",940,820,6.4,6.5,prose,false
+NYST_2023_G08_02,2023,8,Excerpt from Julie of the Wolves,901,950,5.3,7.0,prose,false
+NYST_2023_G08_03,2023,8,Excerpt from The Almost King,879,950,7.1,8.1,prose,false
+NYST_2023_G08_04,2023,8,Robotic Fish to Keep a Fishy Eye on the Health of the Oceans,704,1120,10.0,9.0,prose,false
+NYST_2023_G08_05,2023,8,PAIR - Excerpt from Keep the Wild in Wildlife,531,990,8.5,7.8,prose,true
+NYST_2023_G08_06,2023,8,PAIR - Excerpt from Saving Manatees,458,940,8.3,7.7,prose,true

@@ -1,0 +1,24 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2026_G04_01,2026,4,Excerpt from Kickoff,614,710L,4.84,5.11,prose,false
+NYST_2026_G04_02,2026,4,Excerpt from “The Dream Basket”,756,630L,4.74,5.38,prose,false
+NYST_2026_G04_03,2026,4,Excerpt from “Riding the First Balloons”,752,800L,5.46,5.67,prose,false
+NYST_2026_G04_04,2026,4,Excerpt from “Building Green”,749,840L,5.83,5.91,prose,false
+NYST_2026_G04_05,2026,4,PAIR: Excerpt from Orcas,379,880L,5.45,6.02,prose,true
+NYST_2026_G04_06,2026,4,PAIR: Excerpt from Granny's Clan: A Tale of Wild Orcas,342,640L,5.32,5.33,prose,true
+NYST_2026_G06_01,2026,6,Excerpt from Under the Ashes,880,970L,5.75,6.55,prose,false
+NYST_2026_G06_02,2026,6,“Rescuing Orphan Elephants”,887,1010L,8.03,7.14,prose,false
+NYST_2026_G06_03,2026,6,Excerpt from “Man on a Mission”,717,1000L,8.69,8.14,prose,false
+NYST_2026_G06_04,2026,6,Excerpt from The True Blue Scouts of Sugar Man Swamp,873,1010L,7.05,7.11,prose,false
+NYST_2026_G06_05,2026,6,PAIR: Excerpt from Pig Tales,535,1080L,8.55,6.71,prose,true
+NYST_2026_G06_06,2026,6,PAIR: We Keep a Pig in the Parlor,331,NA,NA,NA,poetry,true
+NYST_2026_G07_01,2026,7,Excerpt from Grandmother Five Baskets,911,950L,6.35,6.16,prose,false
+NYST_2026_G07_02,2026,7,Excerpt from “Miraculous Mauve”,808,1070L,9.52,9.27,prose,false
+NYST_2026_G07_03,2026,7,Excerpt from Wilderness Honey,884,1040L,7.43,7.49,prose,false
+NYST_2026_G07_04,2026,7,"PAIR: Excerpt from “Floating Gold, Dragon Spittle, Whale’s Pearls”",366,1140L,8.89,9.89,prose,true
+NYST_2026_G08_01,2026,8,Excerpt from Ferret Island,1018,1020L,7.02,7.51,prose,false
+NYST_2026_G08_02,2026,8,Excerpt from “Roxie Laybourne: Feather Detective”,1040,1110L,9.46,8.76,prose,false
+NYST_2026_G08_03,2026,8,"Excerpt from “Vercingetorix, King Over Warriors”",1091,940L,6.42,7.15,prose,false
+NYST_2026_G08_04,2026,8,Excerpt from Fog Magic,1081,1000L,5.93,6.23,prose,false
+NYST_2026_G08_05,2026,8,Excerpt from “Sara Seager”,949,1120L,9.23,8.81,prose,false
+NYST_2026_G08_06,2026,8,PAIR: Excerpt from The Sugar Season,543,1120L,8.67,8.32,prose,true
+NYST_2026_G08_07,2026,8,PAIR: Excerpt from The Harvester,511,1040L,7.52,7.21,prose,true

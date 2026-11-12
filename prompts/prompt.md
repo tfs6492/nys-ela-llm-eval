@@ -6,18 +6,12 @@ Analyze the provided text passage and determine its most appropriate reading gra
 
 # Input Specification
 
-The input will be a reading passage from a standardized assessment dataset. Accept any of the following input forms without rejection:
+The input is a reading passage from a standardized assessment dataset (Grades 3 through 8). Forms include:
 
-- **Continuous prose** of any length. Passages in this dataset typically range from 125 to 1,100 words; do not treat length alone as grounds to decline analysis.
+- **Continuous prose** of any length (typically 150 to 1,200 words).
 - **Poetry or verse.** Analyze qualitatively only; skip the FK formula (it is not valid for non-prose) and note this in your internal reasoning.
 - **Prose with embedded glossary entries** in the format `word = definition`. Treat these as part of the passage. Do not count glossary lines as sentences when estimating ASL.
 - **Prose with internal section headings.** Treat headings as structural markers; include them when assessing structural complexity (Dimension 4) but exclude them from sentence-length calculations.
-
-**Data quality issues — handle as follows:**
-- If the passage begins with LLM-generated meta-text (e.g., "Here are the passages extracted from…", "I have removed line numbers…", "Note: the file truncated…"), strip that preamble mentally before analysis. Begin analysis at the first sentence of actual passage content.
-- If the entry contains two or more clearly labeled, self-contained passages (e.g., "Passage 1: … Passage 2: …"), analyze the first complete passage only and note that the entry contained multiple passages.
-
-There is no minimum or maximum length requirement. If a passage is shorter than ~150 words, note that the quantitative estimates will have higher uncertainty due to small sample size.
 
 ---
 
@@ -131,9 +125,7 @@ Return exactly one line in this format:
 
 **Reading Level: Grade [X]**
 
-Use the midpoint grade of the assigned band (e.g., Grade 5 for a Grade 5–6 band, Grade 7 for a Grade 7–8 band, Grade 3 for a Grade 3–4 band).
+Where [X] is an integer from 3 through 8 corresponding to the assigned grade level (or midpoint grade if between bands: Grade 3, 4, 5, 6, 7, or 8).
 
-Do not include any explanation, reasoning, or additional text, with two exceptions:
-- If the passage begins with LLM meta-text that was stripped before analysis, prepend one line: `[Note: preamble stripped before analysis]`
-- If the entry contained multiple labeled passages and only the first was analyzed, prepend one line: `[Note: multiple passages detected; analyzed Passage 1 only]`
+Do not include any explanation, reasoning, preamble, or additional text in the final output.
 

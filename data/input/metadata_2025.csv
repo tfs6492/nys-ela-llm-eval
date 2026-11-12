@@ -1,0 +1,32 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2025_G03_01,2025,3,Excerpt from Sea View Star,640,610,3.5,3.7,prose,false
+NYST_2025_G03_02,2025,3,Raccoons,571,620,4.5,5.3,prose,false
+NYST_2025_G03_03,2025,3,Excerpt from Big Moon Tortilla,607,590,4,4.7,prose,false
+NYST_2025_G03_04,2025,3,The North Wind and the Sun,213,NA,NA,NA,poetry,false
+NYST_2025_G04_01,2025,4,Excerpt from Why Do We Sleep?,748,770,4.5,5.7,prose,false
+NYST_2025_G04_02,2025,4,Salvador’s Wallet,699,720,4.9,4.9,prose,false
+NYST_2025_G04_03,2025,4,Excerpt from Did You Hear About Rosa?,704,880,4.7,5.9,prose,false
+NYST_2025_G04_04,2025,4,Excerpt from Marie Callender: Homemade Pie Maven,325,810,6.2,5.3,prose,true
+NYST_2025_G04_05,2025,4,Excerpt from A Wedding-Cake Tale,383,830,5,6.2,prose,true
+NYST_2025_G05_01,2025,5,Excerpt from Yo-Yo Ma,848,750,5.4,5.4,prose,false
+NYST_2025_G05_02,2025,5,"Excerpt from The Sun, Moon, and Stars",756,870,4.8,6.2,prose,false
+NYST_2025_G05_03,2025,5,Excerpt from On the Back of a Turtle,754,630,5.1,5.8,prose,false
+NYST_2025_G05_04,2025,5,Drum Dream Girl: How One Girl’s Courage Changed Music,373,NA,NA,NA,poetry,false
+NYST_2025_G05_05,2025,5,Excerpt from The Oud Player of Sana‘a,488,860,5.3,6.4,prose,false
+NYST_2025_G06_01,2025,6,Excerpt from Cracking Code Purple,654,910,8.3,7.7,prose,false
+NYST_2025_G06_02,2025,6,Excerpt from New York: Local Legacies,766,940,8.6,7.9,prose,false
+NYST_2025_G06_03,2025,6,Beatrix Looks at Lichens,841,1040,8.4,8.6,prose,false
+NYST_2025_G06_04,2025,6,Excerpt from Marvels in the Muck,628,1020,6.1,7.1,prose,false
+NYST_2025_G06_05,2025,6,Blueflags,124,NA,NA,NA,poetry,false
+NYST_2025_G07_01,2025,7,Excerpt from Emma at the Fair,915,990,8.6,7.5,prose,false
+NYST_2025_G07_02,2025,7,Excerpt from Stronger than Steel,782,890,6.5,7,prose,false
+NYST_2025_G07_03,2025,7,Excerpt from The Lowland,908,1090,8.1,8.6,prose,false
+NYST_2025_G07_04,2025,7,Excerpt from Women in Arts and Entertainment,798,1020,10,9.1,prose,false
+NYST_2025_G07_05,2025,7,Excerpt from Bartlett and the Ice Voyage,436,980,6.9,7.5,prose,true
+NYST_2025_G07_06,2025,7,Excerpt from Rosa’s Animals: The Story of Rosa Bonheur and Her Painting,447,1040,7.9,7.4,prose,true
+NYST_2025_G08_01,2025,8,Excerpt from The Robot Olympics,989,920,6.2,7,prose,false
+NYST_2025_G08_02,2025,8,Reasoning Like a Raven,941,1050,8.8,7.9,prose,false
+NYST_2025_G08_03,2025,8,Excerpt from Brazil-Maru,968,1050,7.2,7.4,prose,false
+NYST_2025_G08_04,2025,8,Excerpt from Villages in the Sky,1019,1140,9.4,8.7,prose,false
+NYST_2025_G08_05,2025,8,Excerpt from Shadows Under the Sea,526,1040,6.9,7.2,prose,true
+NYST_2025_G08_06,2025,8,Excerpt from Sea Horses,474,980,8,7.8,prose,true

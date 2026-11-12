@@ -1,0 +1,183 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2019_G03_01,2019,3,Flying on Ice,643,550L,2.0,46,prose,false
+NYST_2019_G03_02,2019,3,Excerpt from Nature's Fireworks: A Book About Lightning,458,590L,4.7,54,prose,false
+NYST_2019_G03_03,2019,3,Meet the Teacher,595,760L,6.5,54,prose,false
+NYST_2019_G03_04,2019,3,Excerpt from Just the Right Gift,596,490L,2.7,45,prose,false
+NYST_2019_G03_05,2019,3,Don't Touch Me!,314,570L,3.4,50,prose,false
+NYST_2019_G04_03,2019,4,The Day I Rescued Einstein's Compass,621,560L,3.6,49,prose,false
+NYST_2019_G04_04,2019,4,Meet Hannah Wynne: Teen Storyteller,365,760L,7.0,56,prose,false
+NYST_2019_G04_05,2019,4,Reaching for the Top,298,790L,6.0,54,prose,false
+NYST_2019_G05_01,2019,5,Excerpt from Snowflake Bentley,736,670L,4.6,53,prose,false
+NYST_2019_G05_02,2019,5,Excerpt from Gregor and the Sheep,816,980L,5.7,55,prose,false
+NYST_2019_G05_03,2019,5,Excerpt from Seeds of Change: Planting a Path to Peace,577,670L,4.9,52,prose,false
+NYST_2019_G05_04,2019,5,Excerpt from Wackiest White House Pets,784,890L,7.7,58,prose,false
+NYST_2019_G05_05,2019,5,Excerpt from Bloomability,806,650L,4.5,49,prose,false
+NYST_2019_G05_06,2019,5,Excerpt from Secrets of the Cicada Summer,800,780L,5.2,52,prose,false
+NYST_2019_G06_01,2019,6,Excerpt from Addison Cooke and the Treasure of the Incas,804,940L,6.8,59,prose,false
+NYST_2019_G06_02,2019,6,Finding Sacagawea,783,920L,7.7,56,prose,false
+NYST_2019_G06_03,2019,6,Excerpt from School Days in Egypt,614,900L,6.1,58,prose,false
+NYST_2019_G06_04,2019,6,Top Spot,687,1000L,7.8,62,prose,false
+NYST_2019_G06_05,2019,6,Excerpt from Under the Persimmon Tree,934,850L,5.2,53,prose,false
+NYST_2019_G06_06,2019,6,Excerpt from Minuk: Ashes in the Pathway,945,1000L,6.3,54,prose,false
+NYST_2019_G07_01,2019,7,Excerpt from Winds of Hope,1002,980L,7.0,57,prose,false
+NYST_2019_G07_02,2019,7,Excerpt from The Wednesday Wars,913,1000L,7.0,58,prose,false
+NYST_2019_G07_03,2019,7,Antarctica's Hidden Wetland: From Ice to ET,955,940L,8.1,62,prose,false
+NYST_2019_G07_04,2019,7,At Dusk,205,NA,NA,NA,poetry,false
+NYST_2019_G07_05,2019,7,PAIR - Excerpt from Marine Mammals in Captivity,472,1100L,9.0,64,prose,true
+NYST_2019_G07_06,2019,7,PAIR - Excerpt from What Zoo Critics Don't Understand,362,1150L,10.0,67,prose,true
+NYST_2019_G08_01,2019,8,Excerpt from River of Dreams,647,1000L,7.4,58,prose,false
+NYST_2019_G08_02,2019,8,Excerpt from A la Carte,826,1160L,8.4,58,prose,false
+NYST_2019_G08_03,2019,8,Excerpt from Wheels of Change: How Women Rode the Bicycle to Freedom,1029,1170L,10.4,65,prose,false
+NYST_2019_G08_04,2019,8,So Much Happiness,214,NA,NA,NA,poetry,false
+NYST_2019_G08_05,2019,8,PAIR - Excerpt from Gadgets: Built To Not Last,327,1200L,9.9,65,prose,true
+NYST_2019_G08_06,2019,8,"PAIR - Don't Fix Your Fridge, Just Buy a New One",394,1110L,9.5,65,prose,true
+NYST_2022_G03_01,2022,3,Getting Even,542,510,3.5,3.1,prose,false
+NYST_2022_G03_02,2022,3,Just Listen,516,550,2.8,4.0,prose,false
+NYST_2022_G03_03,2022,3,The Watermelon Seed,419,620,4.2,5.8,prose,false
+NYST_2022_G03_04,2022,3,Pill Bugs,365,580,3.1,4.5,prose,false
+NYST_2022_G03_05,2022,3,"""Saving the Birds"" from Fifty Famous People",405,510,3.1,4.3,prose,false
+NYST_2022_G04_01,2022,4,Fabulous Fathers,499,670,4.5,5,prose,false
+NYST_2022_G04_02,2022,4,Sharing My Story,591,760,5.2,5.6,prose,false
+NYST_2022_G04_03,2022,4,Human Homes that Master the Weather,562,890,5.1,5.7,prose,false
+NYST_2022_G04_04,2022,4,PAIR - The Fox and the Crow,275,940,4.6,5.8,prose,true
+NYST_2022_G04_05,2022,4,PAIR - The Otters and the Fox,265,600,4.0,5.5,prose,true
+NYST_2022_G05_01,2022,5,Excerpt from A Scrap and a Robe,745,830,4.4,5.6,prose,false
+NYST_2022_G05_02,2022,5,Janet Guthrie: Lady in the Fast Lane from Profiles in Sports Courage,840,830,5.9,5.8,prose,false
+NYST_2022_G05_03,2022,5,What is Lake - Effect Snow?,424,920,7.1,6.6,prose,false
+NYST_2022_G05_04,2022,5,The Raindrops' New Dresses,171,NA,NA,NA,poetry,false
+NYST_2022_G05_05,2022,5,PAIR - Excerpt from Dogs Helping Dogs,299,880,6.5,6.8,prose,true
+NYST_2022_G05_06,2022,5,"PAIR - Excerpt from Woof! Read to Me, Please",309,880,5.4,5.7,prose,true
+NYST_2022_G06_01,2022,6,Excerpt from Insignificant Events in the Life of a Cactus,761,970,6.7,6.3,prose,false
+NYST_2022_G06_02,2022,6,Excerpt from The Bat Scientists,687,980,7.3,6.6,prose,false
+NYST_2022_G06_03,2022,6,Excerpt from Greenglass House,668,970,7.1,7.0,prose,false
+NYST_2022_G06_04,2022,6,Excerpt from A Legend of the Wooden Shoes,778,920,5.2,6.5,prose,false
+NYST_2022_G06_05,2022,6,PAIR - Excerpt from Thomas Jefferson Builds a Library,426,930,7,6.4,prose,true
+NYST_2022_G06_06,2022,6,"PAIR - Excerpt from In Omaha, A Library with No Books Brings Technology to All",428,990,8.1,8.0,prose,true
+NYST_2022_G07_01,2022,7,Excerpt from The Last Wild Place,920,1030,6.4,6.4,prose,false
+NYST_2022_G07_02,2022,7,"""Susan Butcher"" from Ladies First",877,1070,9,7.6,prose,false
+NYST_2022_G07_03,2022,7,Uncommon Instruments,843,1130,9.3,9.3,prose,false
+NYST_2022_G07_04,2022,7,Unearthing the Arabia,902,920,7.5,7.6,prose,false
+NYST_2022_G07_05,2022,7,"""Persistent"" from Words with Wings",209,NA,NA,NA,poetry,false
+NYST_2022_G07_06,2022,7,Excerpt from The Strictest School in the World,540,920,6.1,6.6,prose,false
+NYST_2022_G08_01,2022,8,"Excerpt from ""The Beadwork"" from American Indian Stories",948,1050,7,7.5,prose,false
+NYST_2022_G08_02,2022,8,Excerpt from The Guest Cat,818,1120,8.7,7.3,prose,false
+NYST_2022_G08_03,2022,8,Excerpt from The Call of Coney Island,777,1130,10.2,8.9,prose,false
+NYST_2022_G08_04,2022,8,Excerpt from “What Kids Learn from Hearing Family Stories”,752,1190,10,8.5,prose,false
+NYST_2022_G08_05,2022,8,Excerpt from 100 Days and 99 Nights,746,1170,9,7.4,prose,false
+NYST_2022_G08_06,2022,8,"""Rain Check""",173,NA,NA,NA,poetry,false
+NYST_2023_G03_01,2023,3,Excerpt from Brothers on Ice,690,550,2.7,3.2,prose,false
+NYST_2023_G03_02,2023,3,Excerpt from My Dadima Wears a Sari,646,530,3.0,3.4,prose,false
+NYST_2023_G03_03,2023,3,Funderstorm,712,660,3.6,4.0,prose,false
+NYST_2023_G03_04,2023,3,Excerpt from The Sensory System: Why Am I Ticklish?,525,550,2.6,4.5,prose,false
+NYST_2023_G04_01,2023,4,Excerpt from Daisy’s Perfect Word,760,620,4.7,5.1,prose,false
+NYST_2023_G04_02,2023,4,Excerpt from A Welcome Thief,539,1020,7.4,7.1,prose,false
+NYST_2023_G04_03,2023,4,Turkey Tug-of-War,459,790,5.8,6.8,prose,false
+NYST_2023_G04_04,2023,4,PAIR - Excerpt from Walt Disney,358,700,6.4,4.8,prose,true
+NYST_2023_G04_05,2023,4,PAIR - Excerpt from Edwin Binney: The Founder of Crayola Crayons,341,610,6.2,4.9,prose,true
+NYST_2023_G05_01,2023,5,Excerpt from President of the Whole Fifth Grade,789,830,5.1,5.6,prose,false
+NYST_2023_G05_02,2023,5,The History of Money: From Bartering to Bills,709,900,6.0,7.3,prose,false
+NYST_2023_G05_03,2023,5,Excerpt from Benny’s Flag,805,630,5.6,5.8,prose,false
+NYST_2023_G05_04,2023,5,PAIR - Excerpt from Miracles on Maple Hill,360,640,4.9,5.2,prose,true
+NYST_2023_G05_05,2023,5,PAIR - Excerpt from Little House in the Big Woods,394,810,5.9,5.6,prose,true
+NYST_2023_G06_01,2023,6,Excerpt from Carrots for Ranger,792,1050,6.0,6.8,prose,false
+NYST_2023_G06_02,2023,6,Excerpt from Welcome to the World of Hummingbirds,1002,900,6.3,6.4,prose,false
+NYST_2023_G06_03,2023,6,Excerpt from The Rice Room: Growing Up Chinese-American,616,910,5.5,6.5,prose,false
+NYST_2023_G06_04,2023,6,PAIR - Excerpt from Rope Burn,369,780,4.9,5.1,prose,true
+NYST_2023_G06_05,2023,6,PAIR - Excerpt from Speechless,469,840,6.4,6.6,prose,true
+NYST_2023_G07_01,2023,7,Becoming Kareem: Growing Up On and Off the Court,665,970,7.3,7.2,prose,false
+NYST_2023_G07_02,2023,7,Exiled,257,NA,NA,NA,poetry,false
+NYST_2023_G07_03,2023,7,Excerpt from Inevitable and Only,767,1210,8.7,7.8,prose,false
+NYST_2023_G07_04,2023,7,The Advice of a Little Girl: Lincoln Exhibition Confirms a Family Myth,711,1080,8.2,7.3,prose,false
+NYST_2023_G07_05,2023,7,PAIR - Excerpt from Art for the Sea,355,970,7.8,7.7,prose,true
+NYST_2023_G07_06,2023,7,PAIR - Excerpt from The Best Way To Deal with Ocean Trash,492,1120,9.1,8.7,prose,true
+NYST_2023_G08_01,2023,8,"Excerpt from Girl with a Camera: Margaret Bourke-White, Photographer",940,820,6.4,6.5,prose,false
+NYST_2023_G08_02,2023,8,Excerpt from Julie of the Wolves,901,950,5.3,7.0,prose,false
+NYST_2023_G08_03,2023,8,Excerpt from The Almost King,879,950,7.1,8.1,prose,false
+NYST_2023_G08_04,2023,8,Robotic Fish to Keep a Fishy Eye on the Health of the Oceans,704,1120,10.0,9.0,prose,false
+NYST_2023_G08_05,2023,8,PAIR - Excerpt from Keep the Wild in Wildlife,531,990,8.5,7.8,prose,true
+NYST_2023_G08_06,2023,8,PAIR - Excerpt from Saving Manatees,458,940,8.3,7.7,prose,true
+NYST_2024_G03_01,2024,3,Excerpt from Crazy About Clouds,509,550,2.4,3.37,prose,false
+NYST_2024_G03_02,2024,3,Excerpt from The Little Red Lighthouse and the Great Gray Bridge,618,530,2.3,3.8,prose,false
+NYST_2024_G03_03,2024,3,Excerpt from Apple Day,528,580,3.2,4.27,prose,false
+NYST_2024_G03_04,2024,3,Excerpt from Hide with the Ladybugs,580,550,3.3,3.13,prose,false
+NYST_2024_G04_01,2024,4,Excerpt from The Great Pyramid: Egypt’s Tomb for All Time,477,610,4.6,4.88,prose,false
+NYST_2024_G04_02,2024,4,Excerpt from Abigail Iris: The Pet Project,704,860,4.7,4.05,prose,false
+NYST_2024_G04_03,2024,4,Sweet Solutions,591,730,5.5,5.37,prose,false
+NYST_2024_G04_04,2024,4,PAIR - Excerpt from Inside Anthills,449,580,3.7,4.52,prose,true
+NYST_2024_G04_05,2024,4,PAIR – The Ants (Poem),110,NA,NA,NA,poetry,true
+NYST_2024_G05_01,2024,5,Excerpt from Sandy Lane Stables: A Horse for the Summer,757,840,5.2,6.15,prose,false
+NYST_2024_G05_02,2024,5,Excerpt from Wild in the City,584,940,6.7,6.38,prose,false
+NYST_2024_G05_03,2024,5,Excerpt from Lobsterman,729,820,5.5,5.67,prose,false
+NYST_2024_G05_04,2024,5,PAIR – The Lion’s Share,277,860,5.2,6.47,prose,true
+NYST_2024_G05_05,2024,5,"PAIR – The Bees and Wasps, and the Hornet",308,1040,6.4,6.97,prose,true
+NYST_2024_G06_01,2024,6,Excerpt from Great Migrations,930,950,7.7,7.2,prose,false
+NYST_2024_G06_02,2024,6,Excerpt from The Story Behind Electricity,660,710,7.4,5.86,prose,false
+NYST_2024_G06_03,2024,6,Excerpt from Charlie Noble and Mate,748,1110,6.5,7.14,prose,false
+NYST_2024_G06_04,2024,6,PAIR - Excerpt from Radio Girl,527,980,6.5,6.82,prose,true
+NYST_2024_G06_05,2024,6,PAIR - Excerpt from Manhattan Transfer: A Novel,480,940,5,6.66,prose,true
+NYST_2024_G07_01,2024,7,Excerpt from Bessie Coleman: First Black Woman Pilot,962,1070,8.9,8.06,prose,false
+NYST_2024_G07_02,2024,7,"Excerpt from Roll of Thunder, Hear My Cry",932,1130,8.1,7.1,prose,false
+NYST_2024_G07_03,2024,7,Excerpt from Rule of Rock,747,740,4.8,5.92,prose,false
+NYST_2024_G07_04,2024,7,Prairie Dogs: Little Rodents That Talk Big,675,1020,7.7,6.83,prose,false
+NYST_2024_G07_05,2024,7,PAIR - Excerpt from Hiking for Fun,516,1000,7.3,7.21,prose,true
+NYST_2024_G07_06,2024,7,PAIR - Excerpt from Want a Healthier Family? Tell Them to Take a Hike,503,1110,7.1,7.9,prose,true
+NYST_2024_G08_01,2024,8,Excerpt from Growing a Farmer,794,980,6.8,7.25,prose,false
+NYST_2024_G08_02,2024,8,Excerpt from The Voyage of the Frog,1010,1200,7.8,5.98,prose,false
+NYST_2024_G08_03,2024,8,Counting Giraffes,718,1050,8.7,8.28,prose,false
+NYST_2024_G08_04,2024,8,Excerpt from Lydia Darragh’s Secret Mission,767,910,7.7,6.81,prose,false
+NYST_2024_G08_05,2024,8,PAIR - Excerpt from The Gold Hunters: A Story of Life and Adventure in the Hudson Bay Wilds,593,990,5.9,6.82,prose,true
+NYST_2024_G08_06,2024,8,PAIR – “Only Gold” from Allegories of Life,425,1050,7,7.9,prose,true
+NYST_2025_G03_01,2025,3,Excerpt from Sea View Star,640,610,3.5,3.7,prose,false
+NYST_2025_G03_02,2025,3,Raccoons,571,620,4.5,5.3,prose,false
+NYST_2025_G03_03,2025,3,Excerpt from Big Moon Tortilla,607,590,4,4.7,prose,false
+NYST_2025_G03_04,2025,3,The North Wind and the Sun,213,NA,NA,NA,poetry,false
+NYST_2025_G04_01,2025,4,Excerpt from Why Do We Sleep?,748,770,4.5,5.7,prose,false
+NYST_2025_G04_02,2025,4,Salvador’s Wallet,699,720,4.9,4.9,prose,false
+NYST_2025_G04_03,2025,4,Excerpt from Did You Hear About Rosa?,704,880,4.7,5.9,prose,false
+NYST_2025_G04_04,2025,4,Excerpt from Marie Callender: Homemade Pie Maven,325,810,6.2,5.3,prose,true
+NYST_2025_G04_05,2025,4,Excerpt from A Wedding-Cake Tale,383,830,5,6.2,prose,true
+NYST_2025_G05_01,2025,5,Excerpt from Yo-Yo Ma,848,750,5.4,5.4,prose,false
+NYST_2025_G05_02,2025,5,"Excerpt from The Sun, Moon, and Stars",756,870,4.8,6.2,prose,false
+NYST_2025_G05_03,2025,5,Excerpt from On the Back of a Turtle,754,630,5.1,5.8,prose,false
+NYST_2025_G05_04,2025,5,Drum Dream Girl: How One Girl’s Courage Changed Music,373,NA,NA,NA,poetry,false
+NYST_2025_G05_05,2025,5,Excerpt from The Oud Player of Sana‘a,488,860,5.3,6.4,prose,false
+NYST_2025_G06_01,2025,6,Excerpt from Cracking Code Purple,654,910,8.3,7.7,prose,false
+NYST_2025_G06_02,2025,6,Excerpt from New York: Local Legacies,766,940,8.6,7.9,prose,false
+NYST_2025_G06_03,2025,6,Beatrix Looks at Lichens,841,1040,8.4,8.6,prose,false
+NYST_2025_G06_04,2025,6,Excerpt from Marvels in the Muck,628,1020,6.1,7.1,prose,false
+NYST_2025_G06_05,2025,6,Blueflags,124,NA,NA,NA,poetry,false
+NYST_2025_G07_01,2025,7,Excerpt from Emma at the Fair,915,990,8.6,7.5,prose,false
+NYST_2025_G07_02,2025,7,Excerpt from Stronger than Steel,782,890,6.5,7,prose,false
+NYST_2025_G07_03,2025,7,Excerpt from The Lowland,908,1090,8.1,8.6,prose,false
+NYST_2025_G07_04,2025,7,Excerpt from Women in Arts and Entertainment,798,1020,10,9.1,prose,false
+NYST_2025_G07_05,2025,7,Excerpt from Bartlett and the Ice Voyage,436,980,6.9,7.5,prose,true
+NYST_2025_G07_06,2025,7,Excerpt from Rosa’s Animals: The Story of Rosa Bonheur and Her Painting,447,1040,7.9,7.4,prose,true
+NYST_2025_G08_01,2025,8,Excerpt from The Robot Olympics,989,920,6.2,7,prose,false
+NYST_2025_G08_02,2025,8,Reasoning Like a Raven,941,1050,8.8,7.9,prose,false
+NYST_2025_G08_03,2025,8,Excerpt from Brazil-Maru,968,1050,7.2,7.4,prose,false
+NYST_2025_G08_04,2025,8,Excerpt from Villages in the Sky,1019,1140,9.4,8.7,prose,false
+NYST_2025_G08_05,2025,8,Excerpt from Shadows Under the Sea,526,1040,6.9,7.2,prose,true
+NYST_2025_G08_06,2025,8,Excerpt from Sea Horses,474,980,8,7.8,prose,true
+NYST_2026_G04_01,2026,4,Excerpt from Kickoff,614,710L,4.84,5.11,prose,false
+NYST_2026_G04_02,2026,4,Excerpt from “The Dream Basket”,756,630L,4.74,5.38,prose,false
+NYST_2026_G04_03,2026,4,Excerpt from “Riding the First Balloons”,752,800L,5.46,5.67,prose,false
+NYST_2026_G04_04,2026,4,Excerpt from “Building Green”,749,840L,5.83,5.91,prose,false
+NYST_2026_G04_05,2026,4,PAIR: Excerpt from Orcas,379,880L,5.45,6.02,prose,true
+NYST_2026_G04_06,2026,4,PAIR: Excerpt from Granny's Clan: A Tale of Wild Orcas,342,640L,5.32,5.33,prose,true
+NYST_2026_G06_01,2026,6,Excerpt from Under the Ashes,880,970L,5.75,6.55,prose,false
+NYST_2026_G06_02,2026,6,“Rescuing Orphan Elephants”,887,1010L,8.03,7.14,prose,false
+NYST_2026_G06_03,2026,6,Excerpt from “Man on a Mission”,717,1000L,8.69,8.14,prose,false
+NYST_2026_G06_04,2026,6,Excerpt from The True Blue Scouts of Sugar Man Swamp,873,1010L,7.05,7.11,prose,false
+NYST_2026_G06_05,2026,6,PAIR: Excerpt from Pig Tales,535,1080L,8.55,6.71,prose,true
+NYST_2026_G06_06,2026,6,PAIR: We Keep a Pig in the Parlor,331,NA,NA,NA,poetry,true
+NYST_2026_G07_01,2026,7,Excerpt from Grandmother Five Baskets,911,950L,6.35,6.16,prose,false
+NYST_2026_G07_02,2026,7,Excerpt from “Miraculous Mauve”,808,1070L,9.52,9.27,prose,false
+NYST_2026_G07_03,2026,7,Excerpt from Wilderness Honey,884,1040L,7.43,7.49,prose,false
+NYST_2026_G07_04,2026,7,"PAIR: Excerpt from “Floating Gold, Dragon Spittle, Whale’s Pearls”",366,1140L,8.89,9.89,prose,true
+NYST_2026_G08_01,2026,8,Excerpt from Ferret Island,1018,1020L,7.02,7.51,prose,false
+NYST_2026_G08_02,2026,8,Excerpt from “Roxie Laybourne: Feather Detective”,1040,1110L,9.46,8.76,prose,false
+NYST_2026_G08_03,2026,8,"Excerpt from “Vercingetorix, King Over Warriors”",1091,940L,6.42,7.15,prose,false
+NYST_2026_G08_04,2026,8,Excerpt from Fog Magic,1081,1000L,5.93,6.23,prose,false
+NYST_2026_G08_05,2026,8,Excerpt from “Sara Seager”,949,1120L,9.23,8.81,prose,false
+NYST_2026_G08_06,2026,8,PAIR: Excerpt from The Sugar Season,543,1120L,8.67,8.32,prose,true
+NYST_2026_G08_07,2026,8,PAIR: Excerpt from The Harvester,511,1040L,7.52,7.21,prose,true

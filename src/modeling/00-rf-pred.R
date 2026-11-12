@@ -1,78 +1,118 @@
-library(quanteda)
-library(quanteda.textstats)
-library(randomForest)
+# ==============================================================================
+# 00-rf-pred.R
+# ------------------------------------------------------------------------------
+# Baseline Random Forest Regression on Text Complexity & Readability Metrics.
+#
+# Reads the normalized passages (`all_passages.csv`) and metadata (`all_metadata.csv`),
+# extracts traditional readability and lexical diversity metrics via quanteda,
+# and generates out-of-bag (OOB) predictions with 95% bootstrap confidence intervals.
+#
+# Output:
+#   - `data/output/rf_results.csv` (Standardized cross-model evaluation format)
+#   - `data/output/rf_results_with_ci.csv` (Legacy backwards-compatible format)
+# ==============================================================================
 
-train_ds <- read.csv("data/input/GASS_2024_Passages.csv", stringsAsFactors = FALSE)
-test_ds <- read.csv("data/input/2024_passages.csv", stringsAsFactors = FALSE)
-
-y_train <- train_ds$"Reading.Level"
-y_test <- test_ds$"Grade.Level"
-
-x_train <- train_ds$Passage
-x_test <- test_ds$Passage
-
-# Traditional text ranking features.
-corp_train <- corpus(x_train)
-toks_train <- tokens(corp_train, remove_punct = TRUE, remove_numbers = TRUE)
-toks_train <- tokens_remove(toks_train, pattern = stopwords("en"))
-
-corp_test <- corpus(x_test)
-toks_test <- tokens(corp_test, remove_punct = TRUE, remove_numbers = TRUE)
-toks_test <- tokens_remove(toks_test, pattern = stopwords("en"))
-
-train_lex <- textstat_lexdiv(toks_train, measure = "CTTR")
-test_lex <- textstat_lexdiv(toks_test, measure = "CTTR")
-
-train_read <- textstat_readability(
-  x_train,
-  measure = c("Flesch.Kincaid", "SMOG", "Dale.Chall", "Coleman.Liau.grade")
-)
-
-test_read <- textstat_readability(
-  x_test,
-  measure = c("Flesch.Kincaid", "SMOG", "Dale.Chall", "Coleman.Liau.grade")
-)
-
-calc_density <- function(txt) {
-  toks <- tokens(txt, remove_punct = TRUE)
-  total <- ntoken(toks)
-  content <- ntoken(tokens_remove(toks, stopwords("en")))
-  content / total
+# Ensure user R libraries are accessible if running on Windows
+user_lib <- file.path(Sys.getenv("LOCALAPPDATA"), "R", "win-library", paste0(R.version$major, ".", substr(R.version$minor, 1, 1)))
+if (dir.exists(user_lib)) {
+  .libPaths(c(user_lib, .libPaths()))
 }
 
-# The original notebook narrowed the feature set to these three predictors.
-x_train_dense <- cbind(
-  Flesch = train_read$Flesch.Kincaid,
-  DaleChall = train_read$Dale.Chall,
-  Diversity = train_lex$CTTR
+suppressPackageStartupMessages({
+  library(quanteda)
+  library(quanteda.textstats)
+  library(randomForest)
+})
+
+# Parse command-line arguments or fallback to project defaults
+args <- commandArgs(trailingOnly = TRUE)
+passages_file <- if (length(args) >= 1) args[1] else "data/input/all_passages.csv"
+metadata_file <- if (length(args) >= 2) args[2] else "data/input/all_metadata.csv"
+output_file   <- if (length(args) >= 3) args[3] else "data/output/rf_results.csv"
+
+cat("==================================================================\n")
+cat(" Random Forest Baseline Readability Predictor\n")
+cat(" Passages:", passages_file, "\n")
+cat(" Metadata:", metadata_file, "\n")
+cat(" Output:  ", output_file, "\n")
+cat("==================================================================\n\n")
+
+if (!file.exists(passages_file)) {
+  stop(paste("Passages file not found:", passages_file))
+}
+if (!file.exists(metadata_file)) {
+  stop(paste("Metadata file not found:", metadata_file))
+}
+
+passages_df <- read.csv(passages_file, stringsAsFactors = FALSE)
+metadata_df <- read.csv(metadata_file, stringsAsFactors = FALSE)
+
+# Inner join on passage_id
+merged_df <- merge(metadata_df, passages_df, by = "passage_id")
+merged_df <- merged_df[order(merged_df$passage_id), ]
+
+cat(sprintf("[*] Loaded %d passages across grades %d to %d (years: %s)\n",
+            nrow(merged_df),
+            min(merged_df$grade, na.rm = TRUE),
+            max(merged_df$grade, na.rm = TRUE),
+            paste(sort(unique(merged_df$year)), collapse = ", ")))
+
+x_text <- merged_df$passage_text
+y_true <- as.numeric(merged_df$grade)
+passage_ids <- merged_df$passage_id
+
+# ------------------------------------------------------------------------------
+# Feature Engineering: Lexical Diversity & Traditional Readability Formulas
+# ------------------------------------------------------------------------------
+cat("[*] Extracting lexical diversity (CTTR) and readability features...\n")
+start_time <- Sys.time()
+
+corp <- corpus(x_text)
+toks <- tokens(corp, remove_punct = TRUE, remove_numbers = TRUE)
+toks <- tokens_remove(toks, pattern = stopwords("en"))
+
+# Corrected Type-Token Ratio
+lex_div <- textstat_lexdiv(toks, measure = "CTTR")
+
+# Classical Readability Indices
+read_metrics <- textstat_readability(
+  x_text,
+  measure = c("Flesch.Kincaid", "Dale.Chall", "SMOG", "Coleman.Liau.grade")
 )
 
-x_test_dense <- cbind(
-  Flesch = test_read$Flesch.Kincaid,
-  DaleChall = test_read$Dale.Chall,
-  Diversity = test_lex$CTTR
+# Standardized dense feature matrix (consistent with published baseline)
+x_dense <- cbind(
+  Flesch    = read_metrics$Flesch.Kincaid,
+  DaleChall = read_metrics$Dale.Chall,
+  Diversity = lex_div$CTTR
 )
 
+# Check for any NA/NaN values
+if (any(is.na(x_dense))) {
+  cat("[WARN] Imputing missing feature values with column medians...\n")
+  for (j in 1:ncol(x_dense)) {
+    x_dense[is.na(x_dense[, j]), j] <- median(x_dense[, j], na.rm = TRUE)
+  }
+}
+
+# ------------------------------------------------------------------------------
+# Out-of-Bag (OOB) Repeated Random Forest Iterations
+# ------------------------------------------------------------------------------
 n_iterations <- 100
-preds_list <- vector("list", n_iterations)
-rmse_values <- numeric(n_iterations)
+preds_matrix <- matrix(NA, nrow = length(y_true), ncol = n_iterations)
+rmse_values  <- numeric(n_iterations)
+
+cat(sprintf("[*] Training Random Forest across %d iterations with OOB estimation...\n", n_iterations))
 
 for (i in seq_len(n_iterations)) {
   set.seed(123 + 853 * i)
 
-  current_mtry <- sample(2:4, 1)
+  current_mtry     <- sample(2:3, 1)
   current_nodesize <- sample(3:7, 1)
 
-  cat(
-    "Running iteration", i,
-    "with mtry =", current_mtry,
-    "& nodesize =", current_nodesize, "...\n"
-  )
-
   rf_model <- randomForest(
-    x = x_train_dense,
-    y = y_train,
-    xtest = x_test_dense,
+    x = x_dense,
+    y = y_true,
     ntree = 100,
     mtry = current_mtry,
     nodesize = current_nodesize,
@@ -80,31 +120,53 @@ for (i in seq_len(n_iterations)) {
     keep.forest = FALSE
   )
 
-  rf_preds <- rf_model$test$predicted
-  preds_list[[i]] <- rf_preds
-  rmse_values[i] <- sqrt(mean((y_test - rf_preds)^2))
+  # Out-of-bag predictions
+  oob_preds <- rf_model$predicted
+  preds_matrix[, i] <- oob_preds
+  rmse_values[i] <- sqrt(mean((y_true - oob_preds)^2, na.rm = TRUE))
 }
 
-rf_preds_df <- as.data.frame(do.call(cbind, preds_list))
-colnames(rf_preds_df) <- paste0("Preds_Iter_", seq_len(n_iterations))
+elapsed_total <- as.numeric(difftime(Sys.time(), start_time, units = "secs"))
+per_sample_duration <- round(elapsed_total / nrow(merged_df), 4)
 
-cat("Average RMSE across", n_iterations, "iterations:", round(mean(rmse_values), 4), "\n")
-cat("RMSE per iteration:\n")
-print(round(rmse_values, 4))
+mean_rmse <- mean(rmse_values)
+cat(sprintf("\n[+] Average Out-Of-Bag RMSE across %d iterations: %.4f (min: %.4f, max: %.4f)\n",
+            n_iterations, mean_rmse, min(rmse_values), max(rmse_values)))
 
-median_preds <- apply(rf_preds_df, MARGIN = 1, FUN = median)
-lower_95 <- apply(rf_preds_df, MARGIN = 1, FUN = quantile, probs = 0.025)
-upper_95 <- apply(rf_preds_df, MARGIN = 1, FUN = quantile, probs = 0.975)
+median_preds <- apply(preds_matrix, 1, median)
+lower_95     <- apply(preds_matrix, 1, quantile, probs = 0.025)
+upper_95     <- apply(preds_matrix, 1, quantile, probs = 0.975)
 
-rf_summary_df <- data.frame(
-  Lower_95_CI = lower_95,
-  Median_Prediction = median_preds,
-  Upper_95_CI = upper_95
+# ------------------------------------------------------------------------------
+# Export Results
+# ------------------------------------------------------------------------------
+dir.create(dirname(output_file), showWarnings = FALSE, recursive = TRUE)
+
+# 1. Standardized multi-model evaluation schema
+standard_rf_results <- data.frame(
+  passage_id       = passage_ids,
+  model            = "random_forest",
+  model_type       = "baseline",
+  true_grade       = y_true,
+  predicted_grade  = round(median_preds, 2),
+  lower_95_ci      = round(lower_95, 2),
+  upper_95_ci      = round(upper_95, 2),
+  parse_error      = FALSE,
+  duration_seconds = per_sample_duration,
+  stringsAsFactors = FALSE
 )
+write.csv(standard_rf_results, output_file, row.names = FALSE)
+cat("[+] Saved standardized RF results to:", output_file, "\n")
 
-results_to_export <- data.frame(
-  true_y = y_test,
-  random_forest_predictions = rf_summary_df
+# 2. Backwards-compatible format with legacy names
+legacy_output <- "data/output/rf_results_with_ci.csv"
+legacy_results <- data.frame(
+  passage_id                                = passage_ids,
+  true_y                                    = y_true,
+  random_forest_predictions.Lower_95_CI     = lower_95,
+  random_forest_predictions.Median_Prediction = median_preds,
+  random_forest_predictions.Upper_95_CI     = upper_95,
+  stringsAsFactors = FALSE
 )
-
-write.csv(results_to_export, "data/output/rf_results_with_ci.csv", row.names = FALSE)
+write.csv(legacy_results, legacy_output, row.names = FALSE)
+cat("[+] Saved backwards-compatible RF results to:", legacy_output, "\n")

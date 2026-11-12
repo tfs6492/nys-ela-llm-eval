@@ -1,0 +1,32 @@
+passage_id,year,grade,passage_title,word_count,lexile,flesch_kincaid,atos,genre,is_paired
+NYST_2024_G03_01,2024,3,Excerpt from Crazy About Clouds,509,550,2.4,3.37,prose,false
+NYST_2024_G03_02,2024,3,Excerpt from The Little Red Lighthouse and the Great Gray Bridge,618,530,2.3,3.8,prose,false
+NYST_2024_G03_03,2024,3,Excerpt from Apple Day,528,580,3.2,4.27,prose,false
+NYST_2024_G03_04,2024,3,Excerpt from Hide with the Ladybugs,580,550,3.3,3.13,prose,false
+NYST_2024_G04_01,2024,4,Excerpt from The Great Pyramid: Egypt’s Tomb for All Time,477,610,4.6,4.88,prose,false
+NYST_2024_G04_02,2024,4,Excerpt from Abigail Iris: The Pet Project,704,860,4.7,4.05,prose,false
+NYST_2024_G04_03,2024,4,Sweet Solutions,591,730,5.5,5.37,prose,false
+NYST_2024_G04_04,2024,4,PAIR - Excerpt from Inside Anthills,449,580,3.7,4.52,prose,true
+NYST_2024_G04_05,2024,4,PAIR – The Ants (Poem),110,NA,NA,NA,poetry,true
+NYST_2024_G05_01,2024,5,Excerpt from Sandy Lane Stables: A Horse for the Summer,757,840,5.2,6.15,prose,false
+NYST_2024_G05_02,2024,5,Excerpt from Wild in the City,584,940,6.7,6.38,prose,false
+NYST_2024_G05_03,2024,5,Excerpt from Lobsterman,729,820,5.5,5.67,prose,false
+NYST_2024_G05_04,2024,5,PAIR – The Lion’s Share,277,860,5.2,6.47,prose,true
+NYST_2024_G05_05,2024,5,"PAIR – The Bees and Wasps, and the Hornet",308,1040,6.4,6.97,prose,true
+NYST_2024_G06_01,2024,6,Excerpt from Great Migrations,930,950,7.7,7.2,prose,false
+NYST_2024_G06_02,2024,6,Excerpt from The Story Behind Electricity,660,710,7.4,5.86,prose,false
+NYST_2024_G06_03,2024,6,Excerpt from Charlie Noble and Mate,748,1110,6.5,7.14,prose,false
+NYST_2024_G06_04,2024,6,PAIR - Excerpt from Radio Girl,527,980,6.5,6.82,prose,true
+NYST_2024_G06_05,2024,6,PAIR - Excerpt from Manhattan Transfer: A Novel,480,940,5,6.66,prose,true
+NYST_2024_G07_01,2024,7,Excerpt from Bessie Coleman: First Black Woman Pilot,962,1070,8.9,8.06,prose,false
+NYST_2024_G07_02,2024,7,"Excerpt from Roll of Thunder, Hear My Cry",932,1130,8.1,7.1,prose,false
+NYST_2024_G07_03,2024,7,Excerpt from Rule of Rock,747,740,4.8,5.92,prose,false
+NYST_2024_G07_04,2024,7,Prairie Dogs: Little Rodents That Talk Big,675,1020,7.7,6.83,prose,false
+NYST_2024_G07_05,2024,7,PAIR - Excerpt from Hiking for Fun,516,1000,7.3,7.21,prose,true
+NYST_2024_G07_06,2024,7,PAIR - Excerpt from Want a Healthier Family? Tell Them to Take a Hike,503,1110,7.1,7.9,prose,true
+NYST_2024_G08_01,2024,8,Excerpt from Growing a Farmer,794,980,6.8,7.25,prose,false
+NYST_2024_G08_02,2024,8,Excerpt from The Voyage of the Frog,1010,1200,7.8,5.98,prose,false
+NYST_2024_G08_03,2024,8,Counting Giraffes,718,1050,8.7,8.28,prose,false
+NYST_2024_G08_04,2024,8,Excerpt from Lydia Darragh’s Secret Mission,767,910,7.7,6.81,prose,false
+NYST_2024_G08_05,2024,8,PAIR - Excerpt from The Gold Hunters: A Story of Life and Adventure in the Hudson Bay Wilds,593,990,5.9,6.82,prose,true
+NYST_2024_G08_06,2024,8,PAIR – “Only Gold” from Allegories of Life,425,1050,7,7.9,prose,true
