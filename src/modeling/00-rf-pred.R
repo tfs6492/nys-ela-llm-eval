@@ -1,7 +1,7 @@
 # ==============================================================================
 # 00-rf-pred.R
 # ------------------------------------------------------------------------------
-# Baseline Random Forest Regression on Text Complexity & Readability Metrics.
+# Random Forest Regression on Text Complexity & Readability Metrics.
 #
 # Reads the normalized passages (`all_passages.csv`) and metadata (`all_metadata.csv`),
 # extracts traditional readability and lexical diversity metrics via quanteda,
@@ -31,7 +31,7 @@ metadata_file <- if (length(args) >= 2) args[2] else "data/input/all_metadata.cs
 output_file   <- if (length(args) >= 3) args[3] else "data/output/rf_results.csv"
 
 cat("==================================================================\n")
-cat(" Random Forest Baseline Readability Predictor\n")
+cat(" Random Forest Readability Predictor\n")
 cat(" Passages:", passages_file, "\n")
 cat(" Metadata:", metadata_file, "\n")
 cat(" Output:  ", output_file, "\n")
@@ -80,7 +80,7 @@ read_metrics <- textstat_readability(
   measure = c("Flesch.Kincaid", "Dale.Chall", "SMOG", "Coleman.Liau.grade")
 )
 
-# Standardized dense feature matrix (consistent with published baseline)
+# Standardized dense feature matrix (consistent with published Random Forest)
 x_dense <- cbind(
   Flesch    = read_metrics$Flesch.Kincaid,
   DaleChall = read_metrics$Dale.Chall,
@@ -146,7 +146,7 @@ dir.create(dirname(output_file), showWarnings = FALSE, recursive = TRUE)
 standard_rf_results <- data.frame(
   passage_id       = passage_ids,
   model            = "random_forest",
-  model_type       = "baseline",
+  model_type       = "rf",
   true_grade       = y_true,
   predicted_grade  = round(median_preds, 2),
   lower_95_ci      = round(lower_95, 2),

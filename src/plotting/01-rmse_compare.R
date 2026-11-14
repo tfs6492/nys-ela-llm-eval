@@ -5,7 +5,7 @@
 #
 # Computes:
 #   1. Overall Root Mean Square Error (RMSE) & Mean Absolute Error (MAE)
-#   2. Matched-pair comparison (Gemini Flash instruct vs. thinking on the same base model)
+#   2. Matched-pair comparison (Gemini Flash vs. Thinking on the same base model)
 #   3. Grade-level deviation progression (Grades 3 through 8)
 #
 # Output:
@@ -37,7 +37,7 @@ meta_df <- read_csv(meta_file, show_col_types = FALSE) |>
 
 preds_list <- list()
 
-# 1. Random Forest Baseline
+# 1. Random Forest
 rf_new <- "data/output/rf_results.csv"
 rf_old <- "data/output/rf_results_with_ci.csv"
 if (file.exists(rf_new)) {
@@ -45,7 +45,7 @@ if (file.exists(rf_new)) {
     transmute(
       passage_id = as.character(passage_id),
       model = "Random Forest",
-      model_type = "Baseline",
+      model_type = "RF",
       base_architecture = "Quanteda RF",
       predicted_grade = as.numeric(predicted_grade)
     )
@@ -59,7 +59,7 @@ if (file.exists(rf_new)) {
     transmute(
       passage_id = as.character(passage_id),
       model = "Random Forest",
-      model_type = "Baseline",
+      model_type = "RF",
       base_architecture = "Quanteda RF",
       predicted_grade = as.numeric(random_forest_predictions.Median_Prediction)
     )
@@ -75,17 +75,17 @@ if (file.exists(gemini_file)) {
       passage_id = as.character(passage_id),
       model = case_when(
         str_detect(model, "3.6-flash|2.5-flash") & !str_detect(model, "thinking") ~ "Gemini Flash",
-        str_detect(model, "thinking") ~ "Gemini Flash Thinking",
+        str_detect(model, "thinking") ~ "Gemini Thinking",
         str_detect(model, "3.1-pro|pro") ~ "Gemini 3.1 Pro",
         TRUE ~ model
       ),
       model_type = case_when(
-        str_detect(model, regex("thinking", ignore_case = TRUE)) ~ "Reasoning",
+        str_detect(model, regex("thinking", ignore_case = TRUE)) ~ "Thinking",
         str_detect(model, regex("pro", ignore_case = TRUE)) ~ "Cloud Pro",
-        TRUE ~ "Instruct"
+        TRUE ~ "Flash"
       ),
       base_architecture = case_when(
-        str_detect(model, "Flash") ~ "Gemini Flash",
+        str_detect(model, "Flash|Thinking") ~ "Gemini Flash",
         TRUE ~ "Gemini Pro"
       ),
       predicted_grade = as.numeric(predicted_grade)
@@ -120,9 +120,9 @@ print(as.data.frame(rmse_summary |> select(model, model_type, n_passages, rmse, 
 
 # Group color palette
 group_colors <- c(
-  "Baseline"   = "#2A9D8F",
-  "Instruct"   = "#E76F51",
-  "Reasoning"  = "#264653",
+  "RF"         = "#8E24AA",
+  "Flash"      = "#6CC24A",
+  "Thinking"   = "#0D6E52",
   "Cloud Pro"  = "#E9C46A"
 )
 
@@ -156,10 +156,10 @@ ggsave("figs/overall_rmse_compare.png", plot = p_overall, width = 10, height = 6
 cat("[+] Saved overall RMSE chart to: figs/overall_rmse_compare.png\n")
 
 # ------------------------------------------------------------------------------
-# Plot 2: Matched Pairs (Instruct vs Reasoning) Comparison
+# Plot 2: Matched Pairs (Flash vs Thinking) Comparison
 # ------------------------------------------------------------------------------
 paired_models <- rmse_summary |>
-  filter(model_type %in% c("Instruct", "Reasoning")) |>
+  filter(model_type %in% c("Flash", "Thinking")) |>
   group_by(base_architecture) |>
   filter(n_distinct(model_type) == 2) |>
   ungroup()
@@ -171,10 +171,10 @@ if (nrow(paired_models) > 0) {
     geom_text(aes(label = sprintf("%.2f", rmse)),
               position = position_dodge(width = 0.7),
               hjust = -0.1, size = 3.5, fontface = "bold") +
-    scale_fill_manual(values = c("Instruct" = "#E76F51", "Reasoning" = "#264653"), name = "Paradigm") +
+    scale_fill_manual(values = c("Flash" = "#6CC24A", "Thinking" = "#0D6E52"), name = "Paradigm") +
     scale_x_continuous(expand = expansion(mult = c(0, 0.15))) +
     labs(
-      title = "Agreement with Assigned Grades: Instruct vs. Thinking on a Shared Base Model",
+      title = "Agreement with Assigned Grades: Flash vs. Thinking on a Shared Base Model",
       subtitle = "Deviation from assigned grade levels for Gemini Flash with and without extended thinking",
       x = "RMSE (Grade Levels)",
       y = "Base Architecture"

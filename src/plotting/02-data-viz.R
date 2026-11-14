@@ -8,8 +8,8 @@
 #
 # Output Figures:
 #   - `figs/predicted_vs_true_grades.png`
-#   - `figs/instruction_vs_rf.png`
-#   - `figs/reasoning_vs_rf.png`
+#   - `figs/flash_vs_rf.png`
+#   - `figs/thinking_vs_rf.png`
 #   - `figs/latency_trend_comparison.png`
 # ==============================================================================
 
@@ -34,7 +34,7 @@ meta_df <- read_csv(meta_file, show_col_types = FALSE) |>
 
 preds_list <- list()
 
-# 1. Random Forest Baseline
+# 1. Random Forest
 rf_new <- "data/output/rf_results.csv"
 rf_old <- "data/output/rf_results_with_ci.csv"
 if (file.exists(rf_new)) {
@@ -42,7 +42,7 @@ if (file.exists(rf_new)) {
     transmute(
       passage_id = as.character(passage_id),
       model = "Random Forest",
-      model_type = "Baseline",
+      model_type = "RF",
       predicted_grade = as.numeric(predicted_grade),
       duration_seconds = as.numeric(duration_seconds)
     )
@@ -56,7 +56,7 @@ if (file.exists(rf_new)) {
     transmute(
       passage_id = as.character(passage_id),
       model = "Random Forest",
-      model_type = "Baseline",
+      model_type = "RF",
       predicted_grade = as.numeric(random_forest_predictions.Median_Prediction),
       duration_seconds = NA_real_
     )
@@ -72,14 +72,14 @@ if (file.exists(gemini_file)) {
       passage_id = as.character(passage_id),
       model = case_when(
         str_detect(model, "3.6-flash|2.5-flash") & !str_detect(model, "thinking") ~ "Gemini Flash",
-        str_detect(model, "thinking") ~ "Gemini Flash Thinking",
+        str_detect(model, "thinking") ~ "Gemini Thinking",
         str_detect(model, "3.1-pro|pro") ~ "Gemini 3.1 Pro",
         TRUE ~ model
       ),
       model_type = case_when(
-        str_detect(model, regex("thinking", ignore_case = TRUE)) ~ "Reasoning",
+        str_detect(model, regex("thinking", ignore_case = TRUE)) ~ "Thinking",
         str_detect(model, regex("pro", ignore_case = TRUE)) ~ "Cloud Pro",
-        TRUE ~ "Instruct"
+        TRUE ~ "Flash"
       ),
       predicted_grade = as.numeric(predicted_grade),
       duration_seconds = as.numeric(duration_seconds)
@@ -105,15 +105,15 @@ p_calibration <- ggplot(all_preds, aes(x = true_grade, y = predicted_grade, colo
   geom_jitter(width = 0.15, height = 0.15, alpha = 0.45, size = 1.6) +
   geom_smooth(method = "loess", formula = y ~ x, se = TRUE, alpha = 0.18, linewidth = 1.1) +
   scale_color_manual(values = c(
-    "Baseline"  = "#2A9D8F",
-    "Instruct"  = "#E76F51",
-    "Reasoning" = "#264653",
+    "RF"        = "#8E24AA",
+    "Flash"     = "#6CC24A",
+    "Thinking"  = "#0D6E52",
     "Cloud Pro" = "#E9C46A"
   ), name = "Model Type") +
   scale_fill_manual(values = c(
-    "Baseline"  = "#2A9D8F",
-    "Instruct"  = "#E76F51",
-    "Reasoning" = "#264653",
+    "RF"        = "#8E24AA",
+    "Flash"     = "#6CC24A",
+    "Thinking"  = "#0D6E52",
     "Cloud Pro" = "#E9C46A"
   ), name = "Model Type") +
   scale_x_continuous(breaks = 3:8, limits = c(2.5, 8.5)) +
@@ -137,19 +137,21 @@ ggsave("figs/predicted_vs_true_grades.png", plot = p_calibration, width = 9.5, h
 cat("[+] Saved calibration curves to: figs/predicted_vs_true_grades.png\n")
 
 # ------------------------------------------------------------------------------
-# Plot 2: Instruct vs. Baseline Divergence
+# Plot 2: Flash vs. RF Divergence
 # ------------------------------------------------------------------------------
-instruct_sub <- all_preds |>
-  filter(model_type %in% c("Baseline", "Instruct"))
+flash_sub <- all_preds |>
+  filter(model_type %in% c("RF", "Flash"))
 
-p_instruct <- ggplot(instruct_sub, aes(x = true_grade, y = predicted_grade, color = model, fill = model)) +
+p_flash <- ggplot(flash_sub, aes(x = true_grade, y = predicted_grade, color = model, fill = model)) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "#777777", linewidth = 0.7) +
   geom_jitter(width = 0.15, height = 0.15, alpha = 0.4, size = 1.5) +
   geom_smooth(method = "loess", formula = y ~ x, se = TRUE, alpha = 0.15, linewidth = 0.9) +
+  scale_color_manual(values = c("Random Forest" = "#8E24AA", "Gemini Flash" = "#6CC24A", "Gemini Thinking" = "#0D6E52")) +
+  scale_fill_manual(values = c("Random Forest" = "#8E24AA", "Gemini Flash" = "#6CC24A", "Gemini Thinking" = "#0D6E52")) +
   scale_x_continuous(breaks = 3:8) +
   scale_y_continuous(breaks = 2:9) +
   labs(
-    title = "Instruct-Tuned Models vs. Random Forest Baseline",
+    title = "Gemini Flash vs. Random Forest",
     subtitle = "Assigned vs. Predicted Reading Grade Level",
     x = "Assigned Grade Level",
     y = "Predicted Grade Level"
@@ -157,23 +159,25 @@ p_instruct <- ggplot(instruct_sub, aes(x = true_grade, y = predicted_grade, colo
   theme_minimal(base_size = 11) +
   theme(plot.title = element_text(face = "bold"), legend.position = "right")
 
-ggsave("figs/instruction_vs_rf.png", plot = p_instruct, width = 9, height = 5.5, dpi = 300)
-cat("[+] Saved instruct comparison to: figs/instruction_vs_rf.png\n")
+ggsave("figs/flash_vs_rf.png", plot = p_flash, width = 9, height = 5.5, dpi = 300)
+cat("[+] Saved Flash comparison to: figs/flash_vs_rf.png\n")
 
 # ------------------------------------------------------------------------------
-# Plot 3: Reasoning vs. Baseline Divergence
+# Plot 3: Thinking vs. RF Divergence
 # ------------------------------------------------------------------------------
-reasoning_sub <- all_preds |>
-  filter(model_type %in% c("Baseline", "Reasoning"))
+thinking_sub <- all_preds |>
+  filter(model_type %in% c("RF", "Thinking"))
 
-p_reasoning <- ggplot(reasoning_sub, aes(x = true_grade, y = predicted_grade, color = model, fill = model)) +
+p_thinking <- ggplot(thinking_sub, aes(x = true_grade, y = predicted_grade, color = model, fill = model)) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "#777777", linewidth = 0.7) +
   geom_jitter(width = 0.15, height = 0.15, alpha = 0.4, size = 1.5) +
   geom_smooth(method = "loess", formula = y ~ x, se = TRUE, alpha = 0.15, linewidth = 0.9) +
+  scale_color_manual(values = c("Random Forest" = "#8E24AA", "Gemini Flash" = "#6CC24A", "Gemini Thinking" = "#0D6E52")) +
+  scale_fill_manual(values = c("Random Forest" = "#8E24AA", "Gemini Flash" = "#6CC24A", "Gemini Thinking" = "#0D6E52")) +
   scale_x_continuous(breaks = 3:8) +
   scale_y_continuous(breaks = 2:9) +
   labs(
-    title = "Reasoning-Tuned Models vs. Random Forest Baseline",
+    title = "Gemini Thinking vs. Random Forest",
     subtitle = "Assigned vs. Predicted Reading Grade Level",
     x = "Assigned Grade Level",
     y = "Predicted Grade Level"
@@ -181,8 +185,8 @@ p_reasoning <- ggplot(reasoning_sub, aes(x = true_grade, y = predicted_grade, co
   theme_minimal(base_size = 11) +
   theme(plot.title = element_text(face = "bold"), legend.position = "right")
 
-ggsave("figs/reasoning_vs_rf.png", plot = p_reasoning, width = 9, height = 5.5, dpi = 300)
-cat("[+] Saved reasoning comparison to: figs/reasoning_vs_rf.png\n")
+ggsave("figs/thinking_vs_rf.png", plot = p_thinking, width = 9, height = 5.5, dpi = 300)
+cat("[+] Saved Thinking comparison to: figs/thinking_vs_rf.png\n")
 
 # ------------------------------------------------------------------------------
 # Plot 4: Latency & Duration Analysis
@@ -198,15 +202,15 @@ if (nrow(latency_df) > 0) {
     scale_y_log10() +
     scale_x_continuous(breaks = 3:8) +
     scale_color_manual(values = c(
-      "Baseline"  = "#2A9D8F",
-      "Instruct"  = "#E76F51",
-      "Reasoning" = "#264653",
+      "RF"        = "#8E24AA",
+      "Flash"     = "#6CC24A",
+      "Thinking"  = "#0D6E52",
       "Cloud Pro" = "#E9C46A"
     ), name = "Model Paradigm") +
     scale_fill_manual(values = c(
-      "Baseline"  = "#2A9D8F",
-      "Instruct"  = "#E76F51",
-      "Reasoning" = "#264653",
+      "RF"        = "#8E24AA",
+      "Flash"     = "#6CC24A",
+      "Thinking"  = "#0D6E52",
       "Cloud Pro" = "#E9C46A"
     ), name = "Model Paradigm") +
     labs(

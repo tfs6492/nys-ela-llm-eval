@@ -5,7 +5,7 @@
 #
 # Integrates:
 #   - Ground truth (`all_metadata.csv`)
-#   - Random Forest baseline (`rf_results.csv`)
+#   - Random Forest (`rf_results.csv`)
 #   - Google Gemini API models (`gemini_results.csv`)
 #
 # Output:
@@ -40,7 +40,7 @@ preds_list <- list()
 preds_list[[length(preds_list) + 1]] <- meta_df |>
   transmute(passage_id = as.character(passage_id), model = "True Grade", predicted_grade = as.numeric(true_grade))
 
-# 2. Random Forest Baseline
+# 2. Random Forest
 rf_new <- "data/output/rf_results.csv"
 rf_old <- "data/output/rf_results_with_ci.csv"
 if (file.exists(rf_new)) {

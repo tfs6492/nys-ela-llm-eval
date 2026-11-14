@@ -8,7 +8,7 @@ Features:
 - Normalized schema support: reads `all_passages.csv` (or specific `passages_{YEAR}.csv`)
   and merges with `all_metadata.csv` (or `metadata_{YEAR}.csv`) to benchmark predictions
   against true ground truth grade levels.
-- Supports both standard instruct mode and extended reasoning / thinking mode.
+- Supports both standard Flash mode and extended Thinking mode.
 - Tracks token economics (input tokens, output tokens, thinking tokens), latency, and parsing integrity.
 - Resumable: `--resume` skips already processed (passage_id, model) combinations.
 - Test mode: `--limit N` tests a subset of passages before full run.
@@ -18,7 +18,7 @@ Usage:
     # Set your API key:
     export GEMINI_API_KEY="AIzaSy..."  (or set in .env file)
 
-    # Run default pair (Flash Instruct & Flash Thinking) on all passages:
+    # Run default pair (Flash & Thinking) on all passages:
     python src/modeling/01-gemini-pred.py
 
     # Test run on first 3 passages:
@@ -57,8 +57,8 @@ DEFAULT_OUTPUT = PROJECT_ROOT / "data/output/gemini_results.csv"
 
 # Model presets
 DEFAULT_MODELS = [
-    "gemini-3.6-flash",           # High-speed Direct Instruct
-    "gemini-3.6-thinking",        # Matched Reasoning / Thinking (thinking budget enabled)
+    "gemini-3.6-flash",           # High-speed Flash
+    "gemini-3.6-thinking",        # Matched Thinking (thinking budget enabled)
 ]
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -216,7 +216,7 @@ def call_gemini_api(
             "thinkingBudget": 1024
         }
     else:
-        # Turn off thinking tokens for pure direct instruct comparison if supported
+        # Turn off thinking tokens for pure Flash comparison if supported
         gen_config["thinkingConfig"] = {
             "thinkingBudget": 0
         }
@@ -384,7 +384,7 @@ def run_evaluation(
 
         for m_idx, model in enumerate(models, 1):
             is_thinking = "thinking" in model.lower()
-            m_type = "reasoning" if is_thinking else "instruct"
+            m_type = "thinking" if is_thinking else "flash"
             print(f"\n[{m_idx}/{len(models)}] Running model: {model} (type: {m_type})")
             print("-" * 65)
 
